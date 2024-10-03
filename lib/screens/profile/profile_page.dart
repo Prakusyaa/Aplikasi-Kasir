@@ -79,7 +79,7 @@ class _SettingsPageState extends State<ProfilePage> {
                   const Text(
                       "Untuk mendapatkan akses penuh silahkan hubungi kontak kami pada halaman 'Tentang Aplikasi' ",
                       style:
-                          TextStyle(color: Color.fromARGB(255, 26, 189, 211))),
+                      TextStyle(color: Color.fromARGB(255, 26, 189, 211))),
                 ],
               ),
             ),
@@ -142,6 +142,283 @@ class _SettingsPageState extends State<ProfilePage> {
                         ),
                       ),
                     ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 30,
+                          horizontal: 80
+                      ),
+                      padding: const EdgeInsets.symmetric(
+                        vertical: 10,
+                      ),
+                      decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(16)),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                              color: transparentYellow,
+                              blurRadius: 4,
+                              spreadRadius: 1,
+                              offset: Offset(0, 1),
+                            )
+                          ]
+                      ),
+                      child: Center(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Material(
+                              color: Colors.white,
+                              child: InkWell(
+                                borderRadius: BorderRadius.circular(12),
+                                onTap: () {
+                                  Future.delayed(const Duration(milliseconds: 600), () {
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (_) => const ChangePasswordPage()));
+                                  });
+                                },
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.asset(
+                                      'assets/icons/wallet.png',
+                                      height: 60,
+                                      width: 60,
+                                    ),
+                                    const Column(
+                                      children: [
+                                        Text(
+                                          'Ganti',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 18
+                                          ),
+                                        ),
+                                        Text(
+                                          'Password',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 18
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Material(
+                              color: Colors.white,
+                              child: InkWell(
+                                borderRadius: BorderRadius.circular(12),
+                                onTap: () {
+                                  Future.delayed(const Duration(milliseconds: 600), () {
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (_) => const CapitalMoneyPage()));
+                                  });
+                                },
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.asset(
+                                      'assets/icons/truck.png',
+                                      height: 60,
+                                      width: 60,
+                                    ),
+                                    const Column(
+                                      children: [
+                                        Text(
+                                          'Uang',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 18
+                                          ),
+                                        ),
+                                        Text(
+                                          'Modal',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 18
+                                          ),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Material(
+                              color: Colors.white,
+                              child: InkWell(
+                                borderRadius: BorderRadius.circular(12),
+                                onTap: () {
+                                  Future.delayed(const Duration(milliseconds: 600), () {
+                                    Navigator.of(context).push(MaterialPageRoute(builder: (_) => const CategoryPage()));
+                                  });
+                                },
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.asset(
+                                      'assets/icons/card.png',
+                                      height: 60,
+                                      width: 60,
+                                    ),
+                                    const Column(
+                                      children: [
+                                        Text(
+                                          'Menu',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 18
+                                          ),
+                                        ),
+                                        Text(
+                                          'Baru',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 18
+                                          ),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Material(
+                              color: Colors.white,
+                              child: InkWell(
+                                borderRadius: BorderRadius.circular(12),
+                                onTap: () {
+                                  Future.delayed(const Duration(milliseconds: 600), () {
+                                    _launchWhatsapp(context);
+                                  });
+                                },
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Image.asset(
+                                      'assets/icons/contact_us.png',
+                                      height: 60,
+                                      width: 60,
+                                    ),
+                                    const Column(
+                                      children: [
+                                        Text(
+                                          'Bantuan',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 18
+                                          ),
+                                        ),
+                                        Text(
+                                          'Vendor',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 18
+                                          ),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    ListTile(
+                      onTap: () {
+                        fetchPrinterAddress(context);
+                      },
+                      title: const Text(
+                        'Printer Kasir',
+                        style: TextStyle(
+                            fontSize: 18
+                        ),
+                      ),
+                      subtitle: const Text(
+                        'Setting nama printer Kasir',
+                        style: TextStyle(
+                            fontSize: 16
+                        ),
+                      ),
+                      leading: const Icon(
+                        Icons.print,
+                        color: Colors.grey,
+                        size: 30,
+                      ),
+                      trailing: const Icon(Icons.chevron_right, color: yellow),
+                    ),
+                    const Divider(),
+                    ListTile(
+                      onTap: () {
+                        fetchPrinterKitchenAddress(context);
+                      },
+                      title: const Text(
+                        'Printer Dapur',
+                        style: TextStyle(
+                            fontSize: 18
+                        ),
+                      ),
+                      subtitle: const Text(
+                        'Setting nama printer Dapur',
+                        style: TextStyle(
+                            fontSize: 16
+                        ),
+                      ),
+                      leading: const Icon(
+                        Icons.print,
+                        color: Colors.orange,
+                        size: 30,
+                      ),
+                      trailing: const Icon(Icons.chevron_right, color: yellow),
+                    ),
+                    const Divider(),
+                    ListTile(
+                      onTap: () {
+                        fetchNewMenu(context);
+                      },
+                      title: const Text(
+                        'Bantuan',
+                        style: TextStyle(
+                            fontSize: 18
+                        ),
+                      ),
+                      subtitle: const Text(
+                        'Bantuan pemakaian aplikasi',
+                        style: TextStyle(
+                            fontSize: 16
+                        ),
+                      ),
+                      leading: const Icon(
+                        Icons.help,
+                        color: Colors.blue,
+                        size: 30,
+                      ),
+                      trailing: const Icon(Icons.chevron_right, color: yellow),
+                    ),
+                    const Divider(),
+                    ListTile(
+                      onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const AboutPage())),
+                      title: const Text(
+                        'Tentang Aplikasi',
+                        style: TextStyle(
+                            fontSize: 18
+                        ),
+                      ),
+                      subtitle: const Text(
+                        'Tentang Aplikasi dan Copyright',
+                        style: TextStyle(
+                            fontSize: 16
+                        ),
+                      ),
+                      leading: const Icon(
+                        Icons.copyright,
+                        color: Colors.greenAccent,
+                        size: 30,
+                      ),
+                      trailing: const Icon(Icons.chevron_right, color: yellow),
+                    ),
                     const Divider(),
                     ListTile(
                       onTap: () {
@@ -166,7 +443,6 @@ class _SettingsPageState extends State<ProfilePage> {
                       ),
                       trailing: const Icon(Icons.chevron_right, color: yellow),
                     ),
-                    const Divider(),
                   ],
                 ),
               ),
@@ -212,7 +488,271 @@ class _SettingsPageState extends State<ProfilePage> {
                             fontWeight: FontWeight.bold, fontSize: 18),
                       ),
                     ),
-
+                    Container(
+                      margin: const EdgeInsets.symmetric(vertical: 16),
+                      decoration: const BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(8)),
+                          color: Colors.white,
+                          boxShadow: [
+                            BoxShadow(
+                                color: transparentYellow,
+                                blurRadius: 4,
+                                spreadRadius: 1,
+                                offset: Offset(0, 1))
+                          ]),
+                      height: 150,
+                      child: Center(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                IconButton(
+                                  icon: Image.asset(
+                                    'assets/icons/wallet.png',
+                                    height: 30,
+                                    width: 30,
+                                  ),
+                                  onPressed: () => Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                          builder: (_) =>
+                                          const ChangePasswordPage())),
+                                ),
+                                const Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text(
+                                      'Ganti',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12
+                                      ),
+                                    ),
+                                    Text(
+                                      'Password',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                IconButton(
+                                  icon: Image.asset(
+                                    'assets/icons/truck.png',
+                                    height: 30,
+                                    width: 30,
+                                  ),
+                                  onPressed: () => Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                          builder: (_) =>
+                                          const CapitalMoneyPage())),
+                                ),
+                                const Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text(
+                                      'Uang',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12
+                                      ),
+                                    ),
+                                    Text(
+                                      'Modal',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                IconButton(
+                                    icon: Image.asset(
+                                      'assets/icons/card.png',
+                                      height: 30,
+                                      width: 30,
+                                    ),
+                                    onPressed: () {
+                                      fetchCategories(context);
+                                    }
+                                ),
+                                const Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text(
+                                      'Menu',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12
+                                      ),
+                                    ),
+                                    Text(
+                                      'Baru',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
+                            Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                IconButton(
+                                  icon: Image.asset(
+                                    'assets/icons/contact_us.png',
+                                    height: 30,
+                                    width: 30,
+                                  ),
+                                  onPressed: () {
+                                    _launchWhatsapp(context);
+                                  },
+                                ),
+                                const Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    Text(
+                                      'Bantuan',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12
+                                      ),
+                                    ),
+                                    Text(
+                                      'Vendor',
+                                      textAlign: TextAlign.center,
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12
+                                      ),
+                                    )
+                                  ],
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    ListTile(
+                        minTileHeight: 1,
+                        title: const Text(
+                          'Printer Kasir',
+                          style: TextStyle(
+                              fontSize: 16
+                          ),
+                        ),
+                        subtitle: const Text(
+                          'Setting nama printer Kasir',
+                          style: TextStyle(
+                              fontSize: 12
+                          ),
+                        ),
+                        leading: const Icon(
+                          Icons.print,
+                          color: Colors.grey,
+                          size: 25,
+                        ),
+                        trailing: const Icon(Icons.chevron_right, color: yellow),
+                        onTap: () {
+                          fetchPrinterAddress(context);
+                        }
+                    ),
+                    const Divider(),
+                    ListTile(
+                        minTileHeight: 1,
+                        title: const Text(
+                          'Printer Dapur',
+                          style: TextStyle(
+                              fontSize: 16
+                          ),
+                        ),
+                        subtitle: const Text(
+                          'Setting nama printer Dapur',
+                          style: TextStyle(
+                              fontSize: 12
+                          ),
+                        ),
+                        leading: const Icon(
+                          Icons.print,
+                          color: Colors.orange,
+                          size: 25,
+                        ),
+                        trailing: const Icon(Icons.chevron_right, color: yellow),
+                        onTap: () {
+                          fetchPrinterKitchenAddress(context);
+                        }
+                    ),
+                    const Divider(),
+                    ListTile(
+                        minTileHeight: 1,
+                        title: const Text(
+                          'Bantuan',
+                          style: TextStyle(
+                              fontSize: 16
+                          ),
+                        ),
+                        subtitle: const Text(
+                          'Bantuan pemakaian aplikasi',
+                          style: TextStyle(
+                              fontSize: 12
+                          ),
+                        ),
+                        leading: const Icon(
+                          Icons.help,
+                          color: Colors.blue,
+                          size: 25,
+                        ),
+                        trailing: const Icon(Icons.chevron_right, color: yellow),
+                        onTap: () {
+                          fetchNewMenu(context);
+                        }
+                    ),
+                    const Divider(),
+                    ListTile(
+                      minTileHeight: 1,
+                      title: const Text(
+                        'Tentang Aplikasi',
+                        style: TextStyle(
+                            fontSize: 16
+                        ),
+                      ),
+                      subtitle: const Text(
+                        'Tentang Aplikasi dan Copyright',
+                        style: TextStyle(
+                            fontSize: 12
+                        ),
+                      ),
+                      leading: const Icon(
+                        Icons.copyright,
+                        color: Colors.greenAccent,
+                        size: 25,
+                      ),
+                      trailing: const Icon(Icons.chevron_right, color: yellow),
+                      onTap: () => Navigator.of(context).push(
+                          MaterialPageRoute(builder: (_) => const AboutPage())),
+                    ),
                     const Divider(),
                     ListTile(
                         minTileHeight: 1,

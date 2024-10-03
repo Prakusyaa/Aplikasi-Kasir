@@ -1,18 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class  Page2 extends StatelessWidget {
+class PengeluaranPage extends StatelessWidget {
 
-  const Page2({super.key});
+  const PengeluaranPage ({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Halaman 2'),
+        title: Text('Pengeluaran'),
       ),
       body: const Center(
-        child: Text('Halaman 2',
+        child: Text('Pengeluaran',
         style: TextStyle(fontSize: 24),
         ),
       )

@@ -4,9 +4,9 @@ import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mozaic_app/api/api_endpoint.dart';
+import 'package:mozaic_app/screens/dboard/dashboard_page.dart';
 import 'package:mozaic_app/screens/main/main_page.dart';
-import 'package:mozaic_app/screens/page2/page_2.dart';
-import 'package:mozaic_app/screens/page3/page_3.dart';
+import 'package:mozaic_app/screens/pengeluaran/pengeluaran_page.dart';
 import 'package:mozaic_app/screens/profile/profile_page.dart';
 import 'package:mozaic_app/widget/custom_snackbar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -74,8 +74,8 @@ class _MainBottomNavigationState extends State<MainBottomNavigation> with Ticker
 
   List<Widget> listPage = [
     const MainPage(),
-    const Page2(),
-    const Page3(),
+    const PengeluaranPage(),
+    const Dashboard(),
     const ProfilePage(),
   ];
 
@@ -132,8 +132,8 @@ class _MainBottomNavigationState extends State<MainBottomNavigation> with Ticker
                         child: const Icon(Icons.payments_rounded)
                     ),
                     icon: const Icon(Icons.payments_rounded),
-                    label: 'Halaman 2',
-                    tooltip: 'Halaman 2'
+                    label: 'Pengeluaran',
+                    tooltip: 'Pengeluaran'
                 ),
               BottomNavigationBarItem(
                   activeIcon: Container(
@@ -146,8 +146,8 @@ class _MainBottomNavigationState extends State<MainBottomNavigation> with Ticker
                       child: const Icon(Icons.dashboard_rounded)
                   ),
                   icon: const Icon(Icons.dashboard_rounded),
-                  label: 'Halaman 3',
-                  tooltip: 'Halaman 3'
+                  label: 'Dashboard',
+                  tooltip: 'DashBoard'
               ),
               BottomNavigationBarItem(
                   activeIcon: Container(
