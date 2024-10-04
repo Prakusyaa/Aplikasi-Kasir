@@ -12,7 +12,7 @@ class Dashboard extends StatelessWidget {
         title: Text('DashBoard'),
       ),
       body: const Center(
-        child: Text('Dashboard',
+        child: Text('alvin ganteng',
         style: TextStyle(fontSize: 24),
         ),
       )
