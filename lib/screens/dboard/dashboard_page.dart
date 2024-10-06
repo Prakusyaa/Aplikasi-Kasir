@@ -9,13 +9,20 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('DashBoard'),
+        title: const Text(
+            'Dashboard',
+            style: TextStyle(
+              fontSize: 28,
+              fontWeight: FontWeight.w500,
+            )
+        ),
+        backgroundColor: const Color(0xffFDC054),
+        shadowColor: Colors.black,
+        elevation: 6,
       ),
       body: const Center(
-        child: Text('alvin ganteng',
-        style: TextStyle(fontSize: 24),
-        ),
-      )
+        child: Text("Dashboard"),
+      ),
     );
   }
 }
