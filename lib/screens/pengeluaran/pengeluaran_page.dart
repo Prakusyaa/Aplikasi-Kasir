@@ -27,7 +27,7 @@ class PengeluaranPage extends StatelessWidget {
               left: 20,
               top: 10,
               child: Text(
-                'Dashboard',
+                'Pengeluaran',
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.w500,
