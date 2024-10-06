@@ -6,22 +6,34 @@ class PengeluaranPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-            'Pengeluaran',
-            style: TextStyle(
-              fontSize: 28,
-              fontWeight: FontWeight.w500,
-            )
+    return MaterialApp(
+      home: Scaffold(
+        body: Stack(
+          children: [
+            Container(
+              color: Colors.white,
+            ),
+            Align(
+              alignment: Alignment.centerRight,
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.335,
+                color: const Color(0xFFFECD7E),
+              ),
+            ),
+            const Positioned(
+              left: 20,
+              top: 10,
+              child: Text(
+                'Pengeluaran',
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+          ],
         ),
-        backgroundColor: const Color(0xffFDC054),
-        shadowColor: Colors.black,
-        elevation: 6,
-      ),
-      body: const Center(
-        child: Text("Pengeluaran"),
       ),
     );
   }
