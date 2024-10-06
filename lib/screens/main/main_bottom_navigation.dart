@@ -212,7 +212,7 @@ class _MainBottomNavigationState extends State<MainBottomNavigation> with Ticker
                       child: const Icon(Icons.payments_rounded)
                   ),
                   icon: const Icon(Icons.payments_rounded),
-                  label: 'Pengeluaran 1',
+                  label: 'Pengeluaran',
                   tooltip: 'Pengeluaran'
               ),
               BottomNavigationBarItem(
@@ -226,7 +226,7 @@ class _MainBottomNavigationState extends State<MainBottomNavigation> with Ticker
                       child: const Icon(Icons.dashboard_rounded)
                   ),
                   icon: const Icon(Icons.dashboard_rounded),
-                  label: 'Dashboard 1',
+                  label: 'Dashboard',
                   tooltip: 'Dashboard'
               ),
               BottomNavigationBarItem(
