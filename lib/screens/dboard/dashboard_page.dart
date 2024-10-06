@@ -21,7 +21,7 @@ class Dashboard extends StatelessWidget {
         elevation: 6,
       ),
       body: const Center(
-        child: Text("Dashboard small"),
+        child: Text("Dashboard"),
       ),
     );
   }
