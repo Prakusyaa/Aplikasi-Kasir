@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../style/app_properties.dart';
+import '../dashboard/dashboard_page.dart';
+
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});
 
@@ -33,6 +36,20 @@ class Dashboard extends StatelessWidget {
               ),
             ),
           ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => const DashboardPage(),
+              ),
+            );
+          },
+          backgroundColor: yellow,
+          child: const Icon(
+            Icons.print,
+            color: Colors.black,
+          ),
         ),
       ),
     );

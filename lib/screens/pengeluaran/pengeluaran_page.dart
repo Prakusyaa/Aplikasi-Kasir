@@ -1,6 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../style/app_properties.dart';
+import '../expenditure/expenditure_page.dart';
+
 class PengeluaranPage extends StatelessWidget {
   const PengeluaranPage ({super.key});
 
@@ -24,7 +27,7 @@ class PengeluaranPage extends StatelessWidget {
               left: 20,
               top: 10,
               child: Text(
-                'Pengeluaran',
+                'Dashboard',
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.w500,
@@ -33,6 +36,20 @@ class PengeluaranPage extends StatelessWidget {
               ),
             ),
           ],
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (_) => const ExpenditurePage(),
+              ),
+            );
+          },
+          backgroundColor: yellow,
+          child: const Icon(
+            Icons.add,
+            color: Colors.black,
+          ),
         ),
       ),
     );
