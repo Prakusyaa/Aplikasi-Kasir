@@ -21,7 +21,7 @@ class PengeluaranPage extends StatelessWidget {
         elevation: 6,
       ),
       body: const Center(
-        child: Text("Pengeluaran"),
+        child: Text("Pengeluaran small"),
       ),
     );
   }
