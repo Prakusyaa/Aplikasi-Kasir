@@ -1,10 +1,10 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../style/app_properties.dart';
 import '../../style/custom_background.dart';
 import '../expenditure/expenditure_date_page.dart';
+import '../expenditure/expenditure_page.dart';
 
 class PengeluaranPage extends StatefulWidget {
   const PengeluaranPage({super.key});
@@ -55,10 +55,20 @@ class _PengeluaranPageState extends State<PengeluaranPage> {
                   title: const Text(
                     'Pengeluaran',
                     style: TextStyle(
-                        color: darkGrey,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 28),
+                      color: darkGrey,
+                      fontWeight: FontWeight.w500,
+                      fontSize: 28,
+                    ),
                   ),
+                ),
+                floatingActionButton: FloatingActionButton(
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => const ExpenditurePage()),
+                    );
+                  },
+                  backgroundColor: yellow,
+                  child: const Icon(Icons.add),
                 ),
               ),
             );
