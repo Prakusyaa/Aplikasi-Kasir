@@ -18,7 +18,7 @@ class CustomSnackbar {
           backgroundColor: backgroundColor,
           behavior: SnackBarBehavior.floating,
           margin: const EdgeInsets.only(
-            bottom: 40,
+            bottom: 20,
             left: 10,
             right: 10
           ),
