@@ -140,6 +140,7 @@ class _LoginState extends State<LoginPage> {
                       loginValidation(context);
                     },
                     style: ElevatedButton.styleFrom(
+                      foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
                       backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
                       shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                       elevation: 3,
@@ -159,6 +160,7 @@ class _LoginState extends State<LoginPage> {
                       registerGuest(context);
                     },
                     style: ElevatedButton.styleFrom(
+                      foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
                       backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
                       shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                       elevation: 3,
