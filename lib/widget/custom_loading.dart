@@ -12,10 +12,10 @@ showLoaderDialog(context) {
           children: [
             Center(
               child: LoadingAnimationWidget.discreteCircle(
-                color: const Color(0xff9c9c9c),
+                color: const Color(0xff434343),
                 size: 50,
-                secondRingColor: const Color(0xffF749A2),
-                thirdRingColor: const Color(0xffF68D7F),
+                secondRingColor: const Color(0xff5e5e5e),
+                thirdRingColor: const Color(0xffacacac),
               ),
             ),
             const SizedBox(height: 10),
