@@ -4,13 +4,12 @@ import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mozaic_app/api/api_endpoint.dart';
-import 'package:mozaic_app/screens/auth/login_page1.dart';
+import 'package:mozaic_app/screens/auth/login_page.dart';
 import 'package:mozaic_app/screens/main/main_page.dart';
 import 'package:mozaic_app/screens/profile/profile_page.dart';
 import 'package:mozaic_app/widget/custom_snackbar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../auth/login_page.dart';
 import '../dashboard/dashboard_page.dart';
 import '../expenditure/expenditure_page.dart';
 
@@ -74,7 +73,7 @@ class _MainBottomNavigationState extends State<MainBottomNavigation> with Ticker
   }
 
   List<Widget> listPage = [
-    const Login(),
+    const MainPage(),
     const ExpenditurePage(),
     const DashboardPage(),
     const ProfilePage(),

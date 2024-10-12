@@ -1,42 +1,30 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mozaic_app/api/api_endpoint.dart';
-import 'package:mozaic_app/widget/custom_snackbar.dart';
-import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:url_launcher/url_launcher.dart';
 
+import '../../api/api_endpoint.dart';
 import '../../style/app_properties.dart';
 import '../../widget/custom_loading.dart';
+import '../../widget/custom_snackbar.dart';
 import '../main/main_bottom_navigation.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<LoginPage> createState() => _LoginState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginState extends State<LoginPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   late bool obscureText;
   late bool obscureText2;
 
-  PackageInfo _packageInfo = PackageInfo(
-    appName: 'Unknown',
-    packageName: 'Unknown',
-    version: 'Unknown',
-    buildNumber: 'Unknown',
-    buildSignature: 'Unknown',
-    installerStore: 'Unknown',
-  );
 
   Future<void> _initPackageInfo() async {
-    final info = await PackageInfo.fromPlatform();
     setState(() {
-      _packageInfo = info;
     });
   }
 
@@ -46,584 +34,164 @@ class _LoginPageState extends State<LoginPage> {
     _initPackageInfo();
     obscureText = true;
     obscureText2 = true;
-    // loadSharedPreference();
+  }
+
+  Widget buildLoginForm(BuildContext context) {
+    return Container(
+      width: 400,
+      height: 450,
+      padding: const EdgeInsets.symmetric(horizontal: 24),
+      decoration: const BoxDecoration(
+        color: Color.fromRGBO(44, 44, 44, 1.0),
+        borderRadius: BorderRadius.all(Radius.circular(10)),
+        boxShadow: shadow,
+      ),
+      child: Form(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            const Align(
+              alignment: Alignment.topCenter,
+              child: Padding(
+                padding: EdgeInsets.only(top: 30),
+                child: Text(
+                  "Alpinjir POS",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            const SizedBox(height: 30),
+            TextFormField(
+              controller: emailController,
+              keyboardType: TextInputType.emailAddress,
+              textInputAction: TextInputAction.next,
+              decoration: InputDecoration(
+                labelText: 'Username',
+                labelStyle: const TextStyle(color: Colors.white),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: const BorderSide(
+                    color: Color.fromRGBO(30, 30, 30, 1.0),
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: const BorderSide(
+                    color: Colors.white,
+                  ),
+                ),
+                prefixIcon: const Icon(
+                  Icons.person,
+                  color: Colors.white,
+                ),
+              ),
+              style: const TextStyle(color: Colors.white),
+            ),
+            const SizedBox(height: 20),
+            TextFormField(
+              controller: passwordController,
+              textInputAction: TextInputAction.done,
+              obscureText: obscureText,
+              decoration: InputDecoration(
+                labelText: 'Password',
+                labelStyle: const TextStyle(color: Colors.white),
+                enabledBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: const BorderSide(
+                    color: Color.fromRGBO(30, 30, 30, 1.0),
+                  ),
+                ),
+                focusedBorder: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: const BorderSide(
+                    color: Colors.white,
+                  ),
+                ),
+                prefixIcon: IconButton(
+                  icon: Icon(
+                    obscureText ? CupertinoIcons.eye_fill : CupertinoIcons.eye_slash_fill,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      obscureText = !obscureText;
+                    });
+                  },
+                ),
+              ),
+              style: const TextStyle(color: Colors.white),
+            ),
+            const Spacer(),
+            SizedBox(
+              width: 400,
+              height: 130,
+              child: Column(
+                children: [
+                  ElevatedButton.icon(
+                    label: const Text(
+                      'Masuk',
+                      style: TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                    onPressed: () {
+                      loginValidation(context);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
+                      shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
+                      elevation: 3,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      minimumSize: const Size(200, 40), // Lebar - Tinggi
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  ElevatedButton.icon(
+                    label: const Text(
+                      'Buat Akun Demo',
+                      style: TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                    onPressed: () {
+                      registerGuest(context);
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
+                      shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
+                      elevation: 3,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      minimumSize: const Size(200, 40), // Lebar - Tinggi
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  const Text(
+                    "Version 1.0",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   @override
   Widget build(BuildContext context) {
-    //Mobile View
-    Widget appName = const Text(
-      'Aplikasi Mozaic',
-      style: TextStyle(
-          color: Colors.black,
-          fontSize: 32,
-          fontWeight: FontWeight.bold,
-          shadows: [
-            BoxShadow(
-              color: Color.fromRGBO(0, 0, 0, 0.15),
-              offset: Offset(0, 5),
-              blurRadius: 10,
-            )
-          ]
-      ),
-    );
-
-    Widget appProduct = const Align(
-      alignment: Alignment.topLeft,
-      child: Row(
-        children: [
-          Text(
-            'Point',
-            style: TextStyle(
-                color: secondaryColor,
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-                shadows: [
-                  BoxShadow(
-                    color: Color.fromRGBO(0, 0, 0, 0.15),
-                    offset: Offset(0, 5),
-                    blurRadius: 10,
-                  )
-                ]
-            ),
-          ),
-          SizedBox(width: 5),
-          Text(
-            'of',
-            style: TextStyle(
-                color: Colors.black,
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-                shadows: [
-                  BoxShadow(
-                    color: Color.fromRGBO(0, 0, 0, 0.15),
-                    offset: Offset(0, 5),
-                    blurRadius: 10,
-                  )
-                ]
-            ),
-          ),
-          SizedBox(width: 5),
-          Text(
-            'Sales',
-            style: TextStyle(
-                color: secondaryColor,
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-                shadows: [
-                  BoxShadow(
-                    color: Color.fromRGBO(0, 0, 0, 0.15),
-                    offset: Offset(0, 5),
-                    blurRadius: 10,
-                  )
-                ]
-            ),
-          ),
-        ],
-      ),
-    );
-
-    Widget subTitle = const Padding(
-        padding: EdgeInsets.only(right: 56),
-        child: Text(
-          'Silahkan Login menggunakan\nAkun yang sudah terdaftar',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 14,
-          ),
-        )
-    );
-
-    Widget loginButton = Positioned(
-      left: MediaQuery.of(context).size.width / 4,
-      bottom: 46,
-      child: InkWell(
-        onTap: () {
-          loginValidation(context);
-        },
-        child: Container(
-          width: MediaQuery.of(context).size.width / 2,
-          height: 60,
-          decoration: BoxDecoration(
-              gradient: const LinearGradient(
-                  colors: [
-                    Color.fromRGBO(236, 60, 3, 1),
-                    Color.fromRGBO(234, 60, 3, 1),
-                    Color.fromRGBO(216, 78, 16, 1),
-                  ],
-                  begin: FractionalOffset.topCenter,
-                  end: FractionalOffset.bottomCenter
-              ),
-              boxShadow: const [
-                BoxShadow(
-                  color: Color.fromRGBO(0, 0, 0, 0.16),
-                  offset: Offset(0, 5),
-                  blurRadius: 10,
-                )
-              ],
-              borderRadius: BorderRadius.circular(9)
-          ),
-          child: const Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Icon(
-                Icons.login,
-                color: Colors.white,
-                size: 26,
-              ),
-              Text(
-                'Login',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                    fontWeight: FontWeight.normal
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
-    );
-
-    Widget loginForm = SizedBox(
-      height: 220,
-      child: Stack(
-        children: [
-          Container(
-            height: 145,
-            width: MediaQuery.of(context).size.width,
-            padding: const EdgeInsets.only(left: 32, right: 12),
-            decoration: const BoxDecoration(
-                color: Color.fromRGBO(255, 255, 255, 0.8),
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    bottomLeft: Radius.circular(10)
-                )
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 8),
-                  child: TextField(
-                    controller: emailController,
-                    keyboardType: TextInputType.emailAddress,
-                    style: const TextStyle(fontSize: 14),
-                    decoration: const InputDecoration(
-                      hintText: 'Username',
-                      hintStyle: TextStyle(
-                          color: Color.fromARGB(255, 143, 143, 143)
-                      ),
-                    ),
-                  ),
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: Center(
-                          child: TextField(
-                            controller: passwordController,
-                            obscureText: obscureText,
-                            style: const TextStyle(fontSize: 14),
-                            decoration: const InputDecoration(
-                              hintText: 'Password',
-                              hintStyle: TextStyle(
-                                  color: Color.fromARGB(255, 143, 143, 143)
-                              ),
-                            ),
-                          )
-                      ),
-                    ),
-                    IconButton(
-                      icon: Icon(
-                        !obscureText ? CupertinoIcons.eye_slash_fill : CupertinoIcons.eye_fill,
-                        color: Colors.grey,
-                      ),
-                      onPressed: () {
-                        setState(() {
-                          obscureText = !obscureText;
-                        });
-                      },
-                    )
-                  ],
-                ),
-              ],
-            ),
-          ),
-          loginButton,
-        ],
-      ),
-    );
-
-    Widget trialButton = Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        InkWell(
-          onTap: () {
-            registerGuest(context);
-          },
-          child: Container(
-            width: MediaQuery.of(context).size.width / 2.5,
-            height: 30,
-            decoration: BoxDecoration(
-                gradient: const LinearGradient(
-                    colors: [
-                      Color.fromRGBO(236, 60, 3, 1),
-                      Color.fromRGBO(234, 60, 3, 1),
-                      Color.fromRGBO(216, 78, 16, 1),
-                    ],
-                    begin: FractionalOffset.topCenter,
-                    end: FractionalOffset.bottomCenter
-                ),
-                boxShadow: const [
-                  BoxShadow(
-                    color: Color.fromRGBO(0, 0, 0, 0.16),
-                    offset: Offset(0, 5),
-                    blurRadius: 10,
-                  )
-                ],
-                borderRadius: BorderRadius.circular(9.0)
-            ),
-            child: const Center(
-              child: Text(
-                'Buat Akun Percobaan',
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.normal
-                ),
-              ),
-            ),
-          ),
-        ),
-      ],
-    );
-
-    Widget appVersion = Padding(
-      padding: const EdgeInsets.only(bottom: 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text(
-            'App Version: ',
-            style: TextStyle(
-              color: Colors.black,
-              fontStyle: FontStyle.italic,
-              fontSize: 12,
-            ),
-          ),
-          InkWell(
-            onTap: () {
-              _launchInBrowser();
-            },
-            child: Text(
-              _packageInfo.version,
-              style: const TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontSize: 12,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-
-    // Tablet View
-    Widget appNameLandscape = const Text(
-      'Aplikasi Mozaic',
-      style: TextStyle(
-          color: Colors.black,
-          fontSize: 30,
-          fontWeight: FontWeight.bold,
-          shadows: [
-            BoxShadow(
-              color: Color.fromRGBO(0, 0, 0, 0.15),
-              offset: Offset(0, 5),
-              blurRadius: 10,
-            )
-          ]
-      ),
-    );
-
-    Widget appProductLandscape = const Align(
-      alignment: Alignment.topLeft,
-      child: Row(
-        children: [
-          Text(
-            'Point',
-            style: TextStyle(
-                color: Colors.red,
-                fontSize: 26,
-                fontWeight: FontWeight.bold,
-                shadows: [
-                  BoxShadow(
-                    color: Color.fromRGBO(0, 0, 0, 0.15),
-                    offset: Offset(0, 5),
-                    blurRadius: 10,
-                  )
-                ]
-            ),
-          ),
-          SizedBox(width: 10),
-          Text(
-            'of',
-            style: TextStyle(
-                color: Colors.black,
-                fontSize: 26,
-                fontWeight: FontWeight.bold,
-                shadows: [
-                  BoxShadow(
-                    color: Color.fromRGBO(0, 0, 0, 0.15),
-                    offset: Offset(0, 5),
-                    blurRadius: 10,
-                  )
-                ]
-            ),
-          ),
-          SizedBox(width: 10),
-          Text(
-            'Sales',
-            style: TextStyle(
-                color: Colors.red,
-                fontSize: 26,
-                fontWeight: FontWeight.bold,
-                shadows: [
-                  BoxShadow(
-                    color: Color.fromRGBO(0, 0, 0, 0.15),
-                    offset: Offset(0, 5),
-                    blurRadius: 10,
-                  )
-                ]
-            ),
-          ),
-        ],
-      ),
-    );
-
-    Widget subTitleLandscape = const Padding(
-        padding: EdgeInsets.only(right: 112),
-        child: Text(
-          'Silahkan Login menggunakan\nAkun yang sudah terdaftar',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 18,
-          ),
-        )
-    );
-
-    Widget loginButtonLandscape = ElevatedButton.icon(
-      icon: const Icon(
-        Icons.login,
-        size: 16,
-      ),
-      label: const Text(
-        'Masuk',
-        style: TextStyle(
-            color: Colors.white,
-            fontSize: 16
-        ),
-      ),
-      onPressed: () {
-        loginValidation(context);
-      },
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepOrange,
-        foregroundColor: Colors.white,
-        shadowColor: Colors.deepOrangeAccent,
-        elevation: 3,
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10)),
-      ),
-    );
-
-    Widget loginFormLandscape = SizedBox(
-      height: 160,
-      child: Stack(
-        children: [
-          Container(
-            width: MediaQuery.of(context).size.width,
-            padding: const EdgeInsets.only(left: 64, right: 24),
-            decoration: const BoxDecoration(
-                color: Color.fromRGBO(255, 255, 255, 1.0),
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    bottomLeft: Radius.circular(10)
-                ),
-                boxShadow: shadow
-            ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 16),
-                  child: TextFormField(
-                    controller: emailController,
-                    keyboardType: TextInputType.emailAddress,
-                    textInputAction: TextInputAction.next,
-                    style: const TextStyle(fontSize: 18),
-                    decoration: const InputDecoration(
-                      hintText: 'Username',
-                      hintStyle: TextStyle(color: Color.fromARGB(255, 143, 143, 143)),
-                    ),
-                  ),
-                ),
-                Row(
-                  children: [
-                    Expanded(
-                      child: Center(
-                          child: TextFormField(
-                            controller: passwordController,
-                            textInputAction: TextInputAction.done,
-                            obscureText: obscureText,
-                            style: const TextStyle(fontSize: 18),
-                            decoration: const InputDecoration(
-                              hintText: 'Password',
-                              hintStyle: TextStyle(color: Color.fromARGB(255, 143, 143, 143)),
-                            ),
-                          )
-                      ),
-                    ),
-                    IconButton(
-                      icon: Icon(
-                        !obscureText ? CupertinoIcons.eye_slash_fill : CupertinoIcons.eye_fill,
-                        color: Colors.grey,
-                      ),
-                      onPressed: () {
-                        setState(() {
-                          obscureText = !obscureText;
-                        });
-                      },
-                    )
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-
-    Widget appVersionLandscape = Padding(
-      padding: const EdgeInsets.only(bottom: 20),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Text(
-            'App Version: ',
-            style: TextStyle(
-              fontStyle: FontStyle.italic,
-              color: Colors.black,
-              fontSize: 14,
-            ),
-          ),
-          InkWell(
-            onTap: () {
-              _launchInBrowser();
-            },
-            child: Text(
-              _packageInfo.version,
-              style: const TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                fontSize: 14,
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-
     return Scaffold(
+      backgroundColor: const Color.fromRGBO(25, 25, 25, 1.0),
       body: OrientationBuilder(
         builder: (context, orientation) {
-          return orientation == Orientation.landscape ? Row(
-            children: [
-              Container(
-                width: MediaQuery.of(context).size.width / 2,
-                decoration: const BoxDecoration(
-                    color: transparentYellow,
-                    image: DecorationImage(
-                      image: AssetImage('assets/mozaic/logo-baru-set-07.png'),
-                      fit: BoxFit.contain,
-                    )
-                ),
-              ),
-              VerticalDivider(
-                width: 1,
-                color: Colors.grey.withOpacity(0.4),
-              ),
-              Expanded(
-                child: SingleChildScrollView(
-                  padding: const EdgeInsets.only(left: 56),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      appNameLandscape,
-                      appProductLandscape,
-                      const SizedBox(height: 10),
-                      subTitleLandscape,
-                      const SizedBox(height: 20),
-                      loginFormLandscape,
-                      const SizedBox(height: 20),
-                      Center(child: loginButtonLandscape),
-                      const SizedBox(height: 40),
-                      appVersionLandscape
-                    ],
-                  ),
-                ),
-              )
-            ],
-          ) : Scaffold(
-            body: Stack(
-              children: [
-                Container(
-                  decoration: const BoxDecoration(
-                      image: DecorationImage(
-                          image: AssetImage('assets/background.jpg'),
-                          fit: BoxFit.cover
-                      )
-                  ),
-                ),
-                Container(
-                  decoration: const BoxDecoration(
-                    color: transparentYellow,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 28),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Spacer(flex: 2),
-                      appName,
-                      appProduct,
-                      const SizedBox(height: 20),
-                      subTitle,
-                      const Spacer(),
-                      loginForm,
-                      trialButton,
-                      const Spacer(flex: 1),
-                      appVersion
-                    ],
-                  ),
-                )
-              ],
-            ),
-          );
+          return Center(child: buildLoginForm(context));
         },
       ),
     );
-  }
-
-  void _launchInBrowser() async {
-    Uri url = Uri.parse('http://www.ciptasolutindo.id');
-    if (!await launchUrl(
-      url,
-      mode: LaunchMode.externalApplication,
-    )) {
-      throw 'Could not launch $url';
-    }
   }
 
   void loginValidation(context) async {
@@ -632,12 +200,12 @@ class _LoginPageState extends State<LoginPage> {
 
     if (emailController.text.isEmpty) {
       isLoginValid = false;
-      CustomSnackbar.show(context, 'Username Tidak Boleh Kosong', backgroundColor: Colors.red);
+      CustomSnackbar.show(context, 'Username Tidak Boleh Kosong', backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0));
     }
 
     if (passwordController.text.isEmpty) {
       isLoginValid = false;
-      CustomSnackbar.show(context, 'Password Tidak Boleh Kosong', backgroundColor: Colors.red);
+      CustomSnackbar.show(context, 'Password Tidak Boleh Kosong', backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0));
     }
     if (isLoginValid) {
       fetchLogin(context, emailController.text, passwordController.text);
@@ -697,10 +265,10 @@ class _LoginPageState extends State<LoginPage> {
       if (e.response?.statusCode == 400 || e.response?.statusCode == 401) {
         //gagal
         String errorMessage = e.response?.data['message'];
-        CustomSnackbar.show(context, errorMessage, backgroundColor: Colors.red);
+        CustomSnackbar.show(context, errorMessage, backgroundColor: Color.fromRGBO(30, 30, 30, 1.0));
       } else {
         print(e.message);
-        CustomSnackbar.show(context, 'Terjadi Kesalahan', backgroundColor: Colors.red);
+        CustomSnackbar.show(context, 'Terjadi Kesalahan', backgroundColor: Color.fromRGBO(30, 30, 30, 1.0));
       }
     }
   }
@@ -744,10 +312,10 @@ class _LoginPageState extends State<LoginPage> {
       if (e.response?.statusCode == 400 || e.response?.statusCode == 401) {
         //gagal
         String errorMessage = e.response?.data['message'];
-        CustomSnackbar.show(context, errorMessage, backgroundColor: Colors.red);
+        CustomSnackbar.show(context, errorMessage, backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0));
       } else {
         print(e.message);
-        CustomSnackbar.show(context, 'Terjadi Kesalahan', backgroundColor: Colors.red);
+        CustomSnackbar.show(context, 'Terjadi Kesalahan', backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0));
       }
     }
   }
