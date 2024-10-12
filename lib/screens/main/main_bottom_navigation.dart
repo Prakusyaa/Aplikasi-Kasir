@@ -7,6 +7,7 @@ import 'package:mozaic_app/api/api_endpoint.dart';
 import 'package:mozaic_app/screens/auth/login_page.dart';
 import 'package:mozaic_app/screens/main/main_page.dart';
 import 'package:mozaic_app/screens/profile/profile_page.dart';
+import 'package:mozaic_app/screens/profile/profile_page1.dart';
 import 'package:mozaic_app/widget/custom_snackbar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -73,7 +74,7 @@ class _MainBottomNavigationState extends State<MainBottomNavigation> with Ticker
   }
 
   List<Widget> listPage = [
-    const MainPage(),
+    const Profile(),
     const ExpenditurePage(),
     const DashboardPage(),
     const ProfilePage(),
@@ -91,14 +92,14 @@ class _MainBottomNavigationState extends State<MainBottomNavigation> with Ticker
             children: listPage,
           ),
           bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: Colors.white,
+            backgroundColor: const Color.fromRGBO(25, 25, 25, 1.0),
             selectedIconTheme: const IconThemeData(
                 color: Colors.white
             ),
             elevation: 40,
             type: BottomNavigationBarType.fixed,
             iconSize: 18,
-            selectedItemColor: const Color.fromRGBO(236, 60, 3, 1),
+            selectedItemColor: const Color.fromRGBO(255, 255, 255, 1.0),
             unselectedItemColor: Colors.grey,
             selectedFontSize: 16,
             unselectedFontSize: 14,
@@ -111,7 +112,7 @@ class _MainBottomNavigationState extends State<MainBottomNavigation> with Ticker
                 activeIcon: Container(
                     padding: const EdgeInsets.all(4),
                     decoration: BoxDecoration(
-                        color: Colors.deepOrange.shade500,
+                        color: const Color.fromRGBO(40, 40, 40, 1.0),
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.circular(8)
                     ),
@@ -125,7 +126,7 @@ class _MainBottomNavigationState extends State<MainBottomNavigation> with Ticker
                     activeIcon: Container(
                         padding: const EdgeInsets.all(8),
                         decoration: BoxDecoration(
-                            color: Colors.deepOrange.shade500,
+                            color: const Color.fromRGBO(40, 40, 40, 1.0),
                             shape: BoxShape.rectangle,
                             borderRadius: BorderRadius.circular(12)
                         ),
@@ -139,7 +140,7 @@ class _MainBottomNavigationState extends State<MainBottomNavigation> with Ticker
                   activeIcon: Container(
                       padding: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
-                          color: Colors.deepOrange.shade500,
+                          color: const Color.fromRGBO(40, 40, 40, 1.0),
                           shape: BoxShape.rectangle,
                           borderRadius: BorderRadius.circular(12)
                       ),
@@ -153,7 +154,7 @@ class _MainBottomNavigationState extends State<MainBottomNavigation> with Ticker
                   activeIcon: Container(
                       padding: const EdgeInsets.all(8),
                       decoration: BoxDecoration(
-                          color: Colors.deepOrange.shade500,
+                          color: const Color.fromRGBO(40, 40, 40, 1.0),
                           shape: BoxShape.rectangle,
                           borderRadius: BorderRadius.circular(12)
                       ),
@@ -172,13 +173,13 @@ class _MainBottomNavigationState extends State<MainBottomNavigation> with Ticker
             children: listPage,
           ),
           bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: Colors.white,
+            backgroundColor: const Color.fromRGBO(25, 25, 25, 1.0),
             selectedIconTheme: const IconThemeData(
                 color: Colors.white
             ),
             elevation: 8,
             type: BottomNavigationBarType.fixed,
-            selectedItemColor: const Color.fromRGBO(236, 60, 3, 1),
+            selectedItemColor: const Color.fromRGBO(255, 255, 255, 1.0),
             unselectedItemColor: Colors.grey,
             selectedFontSize: 14,
             unselectedFontSize: 12,
@@ -191,7 +192,7 @@ class _MainBottomNavigationState extends State<MainBottomNavigation> with Ticker
                 activeIcon: Container(
                     padding: const EdgeInsets.all(2),
                     decoration: BoxDecoration(
-                        color: Colors.deepOrange.shade500,
+                        color: const Color.fromRGBO(40, 40, 40, 1.0),
                         shape: BoxShape.rectangle,
                         borderRadius: BorderRadius.circular(8)
                     ),
@@ -205,7 +206,7 @@ class _MainBottomNavigationState extends State<MainBottomNavigation> with Ticker
                   activeIcon: Container(
                       padding: const EdgeInsets.all(4),
                       decoration: BoxDecoration(
-                          color: Colors.deepOrange.shade500,
+                          color: const Color.fromRGBO(40, 40, 40, 1.0),
                           shape: BoxShape.rectangle,
                           borderRadius: BorderRadius.circular(8)
                       ),
@@ -219,7 +220,7 @@ class _MainBottomNavigationState extends State<MainBottomNavigation> with Ticker
                   activeIcon: Container(
                       padding: const EdgeInsets.all(4),
                       decoration: BoxDecoration(
-                          color: Colors.deepOrange.shade500,
+                          color: const Color.fromRGBO(40, 40, 40, 1.0),
                           shape: BoxShape.rectangle,
                           borderRadius: BorderRadius.circular(8)
                       ),
@@ -233,7 +234,7 @@ class _MainBottomNavigationState extends State<MainBottomNavigation> with Ticker
                   activeIcon: Container(
                       padding: const EdgeInsets.all(4),
                       decoration: BoxDecoration(
-                          color: Colors.deepOrange.shade500,
+                          color: const Color.fromRGBO(40, 40, 40, 1.0),
                           shape: BoxShape.rectangle,
                           borderRadius: BorderRadius.circular(8)
                       ),
