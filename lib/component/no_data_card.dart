@@ -10,8 +10,18 @@ class NoDataCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(10)
       ),
       elevation: 2,
-      shadowColor: Colors.grey,
+      shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
       child: Container(
+        decoration: BoxDecoration(
+          color: Color.fromRGBO(25, 25, 25, 1.0),
+          borderRadius: BorderRadius.circular(8),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.15),
+              blurRadius: 6,
+            )
+          ],
+        ),
         padding: const EdgeInsets.symmetric(
             vertical: 10,
             horizontal: 10
@@ -22,12 +32,13 @@ class NoDataCard extends StatelessWidget {
           children: [
             Icon(
               Icons.no_food,
-              color: Colors.red,
+              color: Color.fromRGBO(60, 60, 60, 1),
             ),
             SizedBox(width: 10),
             Text(
               'Tidak ada data',
               style: TextStyle(
+                color: Colors.white,
                 fontSize: 16
               ),
             )
