@@ -91,20 +91,19 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
             return Scaffold(
               backgroundColor: const Color.fromRGBO(45, 45, 45, 1.0),
               appBar: AppBar(
-                centerTitle: false,
-                titleSpacing: 0,
-                automaticallyImplyLeading: true,
-                backgroundColor: const Color(0xff191919),
-                elevation: 0,
-                leadingWidth: 70,
+                iconTheme: const IconThemeData(
+                  color: Colors.white,
+                ),
+                backgroundColor: Color.fromRGBO(25, 25, 25, 1.0),
                 title: const Text(
-                  "Ganti Password",
+                  'Ganti Password',
                   style: TextStyle(
                       color: Colors.white,
-                      fontSize: 28,
-                      fontWeight: FontWeight.w500
+                      fontSize: 18
                   ),
                 ),
+                elevation: 0,
+                systemOverlayStyle: SystemUiOverlayStyle.dark,
               ),
               body: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,

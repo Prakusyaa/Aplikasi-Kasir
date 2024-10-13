@@ -87,20 +87,19 @@ class _CapitalMoneyPageState extends State<CapitalMoneyPage> {
             return Scaffold(
                 backgroundColor: const Color.fromRGBO(45, 45, 45, 1.0),
                 appBar: AppBar(
-                  centerTitle: false,
-                  titleSpacing: 0,
-                  automaticallyImplyLeading: true,
-                  backgroundColor: const Color(0xff191919),
-                  elevation: 0,
-                  leadingWidth: 70,
+                  iconTheme: const IconThemeData(
+                    color: Colors.white,
+                  ),
+                  backgroundColor: Color.fromRGBO(25, 25, 25, 1.0),
                   title: const Text(
-                    "Uang Modal",
+                    'Uang Modal',
                     style: TextStyle(
                         color: Colors.white,
-                        fontSize: 28,
-                        fontWeight: FontWeight.w500
+                        fontSize: 18
                     ),
                   ),
+                  elevation: 0,
+                  systemOverlayStyle: SystemUiOverlayStyle.dark,
                 ),
               body: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -153,6 +152,7 @@ class _CapitalMoneyPageState extends State<CapitalMoneyPage> {
                                   const Text(
                                     'Tanggal',
                                     style: TextStyle(
+                                      color: Colors.white,
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold
                                     ),
@@ -193,7 +193,7 @@ class _CapitalMoneyPageState extends State<CapitalMoneyPage> {
                                                 ),
                                                 hintText: 'Set tanggal awal',
                                                 hintStyle: TextStyle(
-                                                    color: Colors.grey,
+                                                    color: Colors.white,
                                                     fontSize: 16,
                                                     fontWeight: FontWeight.normal
                                                 ),
@@ -298,20 +298,19 @@ class _CapitalMoneyPageState extends State<CapitalMoneyPage> {
         ) : Scaffold(
           backgroundColor: const Color.fromRGBO(45, 45, 45, 1.0),
           appBar: AppBar(
-            centerTitle: false,
-            titleSpacing: 0,
-            automaticallyImplyLeading: true,
-            backgroundColor: const Color(0xff191919),
-            elevation: 0,
-            leadingWidth: 70,
+            iconTheme: const IconThemeData(
+              color: Colors.white,
+            ),
+            backgroundColor: Color.fromRGBO(25, 25, 25, 1.0),
             title: const Text(
-              "Uang Modal",
+              'Uang Modal',
               style: TextStyle(
                   color: Colors.white,
-                  fontSize: 28,
-                  fontWeight: FontWeight.w500
+                  fontSize: 18
               ),
             ),
+            elevation: 0,
+            systemOverlayStyle: SystemUiOverlayStyle.dark,
           ),
           body: SafeArea(
               bottom: true,
@@ -348,6 +347,7 @@ class _CapitalMoneyPageState extends State<CapitalMoneyPage> {
                                   const Text(
                                     'Tanggal',
                                     style: TextStyle(
+                                      color: Colors.white,
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold
                                     ),
@@ -388,7 +388,7 @@ class _CapitalMoneyPageState extends State<CapitalMoneyPage> {
                                                 ),
                                                 hintText: 'Set tanggal awal',
                                                 hintStyle: TextStyle(
-                                                    color: Colors.grey,
+                                                    color: Colors.white,
                                                     fontSize: 16,
                                                     fontWeight: FontWeight.normal
                                                 ),
