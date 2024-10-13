@@ -7,7 +7,6 @@ import 'package:mozaic_app/screens/category/category_page.dart';
 import 'package:mozaic_app/widget/custom_snackbar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../style/app_properties.dart';
 import '../../widget/custom_loading.dart';
 
 class EditItemPage extends StatefulWidget {
@@ -105,9 +104,9 @@ class _EditItemPageState extends State<EditItemPage> {
         ),
       ),
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepOrange,
-        foregroundColor: Colors.white,
-        shadowColor: Colors.orangeAccent,
+        foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+        backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
+        shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
         elevation: 3,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)),
@@ -134,9 +133,9 @@ class _EditItemPageState extends State<EditItemPage> {
         ),
       ),
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepOrange,
-        foregroundColor: Colors.white,
-        shadowColor: Colors.orangeAccent,
+        foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+        backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
+        shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
         elevation: 3,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)),
@@ -148,7 +147,7 @@ class _EditItemPageState extends State<EditItemPage> {
         return orientation == Orientation.landscape ? LayoutBuilder(
           builder: (context, constraints) {
             return Scaffold(
-              backgroundColor: Colors.white,
+              backgroundColor: const Color.fromRGBO(45, 45, 45, 1.0),
               body: Container(
                 margin: const EdgeInsets.only(top: kToolbarHeight),
                 padding: const EdgeInsets.symmetric(horizontal: 36),
@@ -160,12 +159,12 @@ class _EditItemPageState extends State<EditItemPage> {
                         Text(
                           'Edit Item',
                           style: TextStyle(
-                            color: darkGrey,
+                            color: Colors.white,
                             fontSize: 28,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        CloseButton()
+                        CloseButton(color: Colors.white,)
                       ],
                     ),
                     Expanded(
@@ -181,10 +180,10 @@ class _EditItemPageState extends State<EditItemPage> {
                                 Column(
                                   children: [
                                     Card(
-                                      color: Colors.white,
+                                      color: Color.fromRGBO(20, 20, 20, 1.0),
                                       elevation: 8,
                                       surfaceTintColor: Colors.grey.shade400,
-                                      shadowColor: Colors.grey,
+                                      shadowColor: Colors.black26,
                                       shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(12)
                                       ),
@@ -197,8 +196,18 @@ class _EditItemPageState extends State<EditItemPage> {
                                             const SizedBox(height: 10),
                                             Card(
                                               elevation: 2,
-                                              shadowColor: Colors.grey,
+                                              shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                                               child: Container(
+                                                decoration: BoxDecoration(
+                                                  color: Color.fromRGBO(25, 25, 25, 1.0),
+                                                  borderRadius: BorderRadius.circular(8),
+                                                  boxShadow: [
+                                                    BoxShadow(
+                                                      color: Colors.black.withOpacity(0.15),
+                                                      blurRadius: 6,
+                                                    )
+                                                  ],
+                                                ),
                                                 padding: const EdgeInsets.symmetric(
                                                     vertical: 10,
                                                     horizontal: 10
@@ -209,6 +218,7 @@ class _EditItemPageState extends State<EditItemPage> {
                                                     const Text(
                                                       'Pilih Kategori',
                                                       style: TextStyle(
+                                                        color: Colors.white,
                                                           fontSize: 14,
                                                           fontWeight: FontWeight.bold
                                                       ),
@@ -261,8 +271,18 @@ class _EditItemPageState extends State<EditItemPage> {
                                             ),
                                             Card(
                                               elevation: 2,
-                                              shadowColor: Colors.grey,
+                                              shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                                               child: Container(
+                                                decoration: BoxDecoration(
+                                                  color: Color.fromRGBO(25, 25, 25, 1.0),
+                                                  borderRadius: BorderRadius.circular(8),
+                                                  boxShadow: [
+                                                    BoxShadow(
+                                                      color: Colors.black.withOpacity(0.15),
+                                                      blurRadius: 6,
+                                                    )
+                                                  ],
+                                                ),
                                                 padding: const EdgeInsets.symmetric(
                                                     vertical: 10,
                                                     horizontal: 10
@@ -273,6 +293,7 @@ class _EditItemPageState extends State<EditItemPage> {
                                                     const Text(
                                                       'Kode Barang',
                                                       style: TextStyle(
+                                                        color: Colors.white,
                                                           fontSize: 14,
                                                           fontWeight: FontWeight.bold
                                                       ),
@@ -326,8 +347,18 @@ class _EditItemPageState extends State<EditItemPage> {
                                             ),
                                             Card(
                                               elevation: 2,
-                                              shadowColor: Colors.grey,
+                                              shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                                               child: Container(
+                                                decoration: BoxDecoration(
+                                                  color: Color.fromRGBO(25, 25, 25, 1.0),
+                                                  borderRadius: BorderRadius.circular(8),
+                                                  boxShadow: [
+                                                    BoxShadow(
+                                                      color: Colors.black.withOpacity(0.15),
+                                                      blurRadius: 6,
+                                                    )
+                                                  ],
+                                                ),
                                                 padding: const EdgeInsets.symmetric(
                                                     vertical: 10,
                                                     horizontal: 10
@@ -338,6 +369,7 @@ class _EditItemPageState extends State<EditItemPage> {
                                                     const Text(
                                                       'Nama Barang',
                                                       style: TextStyle(
+                                                        color: Colors.white,
                                                           fontSize: 14,
                                                           fontWeight: FontWeight.bold
                                                       ),
@@ -391,8 +423,18 @@ class _EditItemPageState extends State<EditItemPage> {
                                             ),
                                             Card(
                                               elevation: 2,
-                                              shadowColor: Colors.grey,
+                                              shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                                               child: Container(
+                                                decoration: BoxDecoration(
+                                                  color: Color.fromRGBO(25, 25, 25, 1.0),
+                                                  borderRadius: BorderRadius.circular(8),
+                                                  boxShadow: [
+                                                    BoxShadow(
+                                                      color: Colors.black.withOpacity(0.15),
+                                                      blurRadius: 6,
+                                                    )
+                                                  ],
+                                                ),
                                                 padding: const EdgeInsets.symmetric(
                                                     vertical: 10,
                                                     horizontal: 10
@@ -403,6 +445,7 @@ class _EditItemPageState extends State<EditItemPage> {
                                                     const Text(
                                                       'Keterangan',
                                                       style: TextStyle(
+                                                        color: Colors.white,
                                                           fontSize: 14,
                                                           fontWeight: FontWeight.bold
                                                       ),
@@ -456,8 +499,18 @@ class _EditItemPageState extends State<EditItemPage> {
                                             ),
                                             Card(
                                               elevation: 2,
-                                              shadowColor: Colors.grey,
+                                              shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                                               child: Container(
+                                                decoration: BoxDecoration(
+                                                  color: Color.fromRGBO(25, 25, 25, 1.0),
+                                                  borderRadius: BorderRadius.circular(8),
+                                                  boxShadow: [
+                                                    BoxShadow(
+                                                      color: Colors.black.withOpacity(0.15),
+                                                      blurRadius: 6,
+                                                    )
+                                                  ],
+                                                ),
                                                 padding: const EdgeInsets.symmetric(
                                                     vertical: 10,
                                                     horizontal: 10
@@ -468,6 +521,7 @@ class _EditItemPageState extends State<EditItemPage> {
                                                     const Text(
                                                       'Pilih Satuan',
                                                       style: TextStyle(
+                                                        color: Colors.white,
                                                           fontSize: 14,
                                                           fontWeight: FontWeight.bold
                                                       ),
@@ -588,8 +642,18 @@ class _EditItemPageState extends State<EditItemPage> {
                                                 Flexible(
                                                   child: Card(
                                                     elevation: 2,
-                                                    shadowColor: Colors.grey,
+                                                    shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                                                     child: Container(
+                                                      decoration: BoxDecoration(
+                                                        color: Color.fromRGBO(25, 25, 25, 1.0),
+                                                        borderRadius: BorderRadius.circular(8),
+                                                        boxShadow: [
+                                                          BoxShadow(
+                                                            color: Colors.black.withOpacity(0.15),
+                                                            blurRadius: 6,
+                                                          )
+                                                        ],
+                                                      ),
                                                       padding: const EdgeInsets.symmetric(
                                                           vertical: 10,
                                                           horizontal: 10
@@ -600,6 +664,7 @@ class _EditItemPageState extends State<EditItemPage> {
                                                           const Text(
                                                             'Harga Beli',
                                                             style: TextStyle(
+                                                              color: Colors.white,
                                                                 fontSize: 14,
                                                                 fontWeight: FontWeight.bold
                                                             ),
@@ -656,8 +721,18 @@ class _EditItemPageState extends State<EditItemPage> {
                                                 Flexible(
                                                   child: Card(
                                                     elevation: 2,
-                                                    shadowColor: Colors.grey,
+                                                    shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                                                     child: Container(
+                                                      decoration: BoxDecoration(
+                                                        color: Color.fromRGBO(25, 25, 25, 1.0),
+                                                        borderRadius: BorderRadius.circular(8),
+                                                        boxShadow: [
+                                                          BoxShadow(
+                                                            color: Colors.black.withOpacity(0.15),
+                                                            blurRadius: 6,
+                                                          )
+                                                        ],
+                                                      ),
                                                       padding: const EdgeInsets.symmetric(
                                                           vertical: 10,
                                                           horizontal: 10
@@ -668,6 +743,7 @@ class _EditItemPageState extends State<EditItemPage> {
                                                           const Text(
                                                             'Keterangan',
                                                             style: TextStyle(
+                                                              color: Colors.white,
                                                                 fontSize: 14,
                                                                 fontWeight: FontWeight.bold
                                                             ),
@@ -745,7 +821,7 @@ class _EditItemPageState extends State<EditItemPage> {
             );
           },
         ) : Scaffold(
-          backgroundColor: Colors.white,
+          backgroundColor: const Color.fromRGBO(45, 45, 45, 1.0),
           body: SingleChildScrollView(
             child: ConstrainedBox(
               constraints: const BoxConstraints(
@@ -761,22 +837,22 @@ class _EditItemPageState extends State<EditItemPage> {
                         Text(
                           'Edit Item',
                           style: TextStyle(
-                            color: darkGrey,
+                            color: Colors.white,
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        CloseButton()
+                        CloseButton(color: Colors.white,)
                       ],
                     ),
                     const SizedBox(height: 10),
                     Column(
                       children: [
                         Card(
-                          color: Colors.white,
+                          color: Color.fromRGBO(20, 20, 20, 1.0),
                           elevation: 4,
-                          surfaceTintColor: Colors.grey.shade200,
-                          shadowColor: Colors.grey,
+                          surfaceTintColor: Colors.grey.shade400,
+                          shadowColor: Colors.black26,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12)
                           ),
@@ -789,8 +865,18 @@ class _EditItemPageState extends State<EditItemPage> {
                                 const SizedBox(height: 10),
                                 Card(
                                   elevation: 2,
-                                  shadowColor: Colors.grey,
+                                  shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                                   child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Color.fromRGBO(25, 25, 25, 1.0),
+                                      borderRadius: BorderRadius.circular(8),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black.withOpacity(0.15),
+                                          blurRadius: 6,
+                                        )
+                                      ],
+                                    ),
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 10,
                                         horizontal: 10
@@ -801,6 +887,7 @@ class _EditItemPageState extends State<EditItemPage> {
                                         const Text(
                                           'Pilih Kategori',
                                           style: TextStyle(
+                                            color: Colors.white,
                                               fontSize: 14,
                                               fontWeight: FontWeight.bold
                                           ),
@@ -853,8 +940,18 @@ class _EditItemPageState extends State<EditItemPage> {
                                 ),
                                 Card(
                                   elevation: 2,
-                                  shadowColor: Colors.grey,
+                                  shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                                   child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Color.fromRGBO(25, 25, 25, 1.0),
+                                      borderRadius: BorderRadius.circular(8),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black.withOpacity(0.15),
+                                          blurRadius: 6,
+                                        )
+                                      ],
+                                    ),
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 10,
                                         horizontal: 10
@@ -865,6 +962,7 @@ class _EditItemPageState extends State<EditItemPage> {
                                         const Text(
                                           'Kode Barang',
                                           style: TextStyle(
+                                            color: Colors.white,
                                               fontSize: 14,
                                               fontWeight: FontWeight.bold
                                           ),
@@ -918,8 +1016,18 @@ class _EditItemPageState extends State<EditItemPage> {
                                 ),
                                 Card(
                                   elevation: 2,
-                                  shadowColor: Colors.grey,
+                                  shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                                   child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Color.fromRGBO(25, 25, 25, 1.0),
+                                      borderRadius: BorderRadius.circular(8),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black.withOpacity(0.15),
+                                          blurRadius: 6,
+                                        )
+                                      ],
+                                    ),
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 10,
                                         horizontal: 10
@@ -930,6 +1038,7 @@ class _EditItemPageState extends State<EditItemPage> {
                                         const Text(
                                           'Nama Barang',
                                           style: TextStyle(
+                                            color: Colors.white,
                                               fontSize: 14,
                                               fontWeight: FontWeight.bold
                                           ),
@@ -983,8 +1092,18 @@ class _EditItemPageState extends State<EditItemPage> {
                                 ),
                                 Card(
                                   elevation: 2,
-                                  shadowColor: Colors.grey,
+                                  shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                                   child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Color.fromRGBO(25, 25, 25, 1.0),
+                                      borderRadius: BorderRadius.circular(8),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black.withOpacity(0.15),
+                                          blurRadius: 6,
+                                        )
+                                      ],
+                                    ),
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 10,
                                         horizontal: 10
@@ -995,6 +1114,7 @@ class _EditItemPageState extends State<EditItemPage> {
                                         const Text(
                                           'Keterangan',
                                           style: TextStyle(
+                                            color: Colors.white,
                                               fontSize: 14,
                                               fontWeight: FontWeight.bold
                                           ),
@@ -1048,8 +1168,18 @@ class _EditItemPageState extends State<EditItemPage> {
                                 ),
                                 Card(
                                   elevation: 2,
-                                  shadowColor: Colors.grey,
+                                  shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                                   child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Color.fromRGBO(25, 25, 25, 1.0),
+                                      borderRadius: BorderRadius.circular(8),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black.withOpacity(0.15),
+                                          blurRadius: 6,
+                                        )
+                                      ],
+                                    ),
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 10,
                                         horizontal: 10
@@ -1060,6 +1190,7 @@ class _EditItemPageState extends State<EditItemPage> {
                                         const Text(
                                           'Pilih Satuan',
                                           style: TextStyle(
+                                            color: Colors.white,
                                               fontSize: 14,
                                               fontWeight: FontWeight.bold
                                           ),
@@ -1180,8 +1311,18 @@ class _EditItemPageState extends State<EditItemPage> {
                                     Flexible(
                                       child: Card(
                                         elevation: 2,
-                                        shadowColor: Colors.grey,
+                                        shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                                         child: Container(
+                                          decoration: BoxDecoration(
+                                            color: Color.fromRGBO(25, 25, 25, 1.0),
+                                            borderRadius: BorderRadius.circular(8),
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: Colors.black.withOpacity(0.15),
+                                                blurRadius: 6,
+                                              )
+                                            ],
+                                          ),
                                           padding: const EdgeInsets.symmetric(
                                               vertical: 10,
                                               horizontal: 10
@@ -1192,6 +1333,7 @@ class _EditItemPageState extends State<EditItemPage> {
                                               const Text(
                                                 'Harga Beli',
                                                 style: TextStyle(
+                                                  color: Colors.white,
                                                     fontSize: 14,
                                                     fontWeight: FontWeight.bold
                                                 ),
@@ -1248,8 +1390,18 @@ class _EditItemPageState extends State<EditItemPage> {
                                     Flexible(
                                       child: Card(
                                         elevation: 2,
-                                        shadowColor: Colors.grey,
+                                        shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                                         child: Container(
+                                          decoration: BoxDecoration(
+                                            color: Color.fromRGBO(25, 25, 25, 1.0),
+                                            borderRadius: BorderRadius.circular(8),
+                                            boxShadow: [
+                                              BoxShadow(
+                                                color: Colors.black.withOpacity(0.15),
+                                                blurRadius: 6,
+                                              )
+                                            ],
+                                          ),
                                           padding: const EdgeInsets.symmetric(
                                               vertical: 10,
                                               horizontal: 10
@@ -1260,6 +1412,7 @@ class _EditItemPageState extends State<EditItemPage> {
                                               const Text(
                                                 'Harga Jual',
                                                 style: TextStyle(
+                                                  color: Colors.white,
                                                     fontSize: 14,
                                                     fontWeight: FontWeight.bold
                                                 ),
