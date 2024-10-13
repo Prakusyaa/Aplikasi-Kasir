@@ -1,4 +1,21 @@
+import 'dart:convert';
+import 'dart:io';
+
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+import '../../api/api_endpoint.dart';
+import '../../constant/app_constant.dart';
+import '../../widget/custom_loading.dart';
+import '../../widget/custom_snackbar.dart';
+import '../auth/login_page.dart';
+import '../category/category_page.dart';
+import '../printer/printer_address_page.dart';
+import '../printer/printer_kitchen_address_page.dart';
+import 'about_page.dart';
+import 'help_page.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -8,6 +25,74 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  String userId = '';
+  String userName = '';
+  String fullName = '';
+  String userGroupName = '';
+  String token = '';
+  int? guestState;
+
+  @override
+  void initState() {
+    super.initState();
+    loadSharedPreference();
+  }
+
+  void rebuild() {
+    loadSharedPreference();
+  }
+
+  Future<void> loadSharedPreference() async {
+    final prefs = await SharedPreferences.getInstance();
+    setState(() {
+      userId = prefs.getString('user_id') ?? 'default_id';
+      userName = prefs.getString('username') ?? 'default_username';
+      fullName = prefs.getString('full_name') ?? 'default_full_name';
+      userGroupName = prefs.getString('user_group_name') ?? 'default_group_name';
+      guestState = int.tryParse(prefs.getString('guest_state') ?? '0');
+      token = prefs.getString('token') ?? 'default_token';
+    });
+
+    if (guestState == 1) {
+      WidgetsBinding.instance.addPostFrameCallback((_) async {
+        await showDialog(
+          context: context,
+          builder: (context) => AlertDialog(
+            title: const Text("Akun Percobaan"),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: [
+                  Text("username : $userName"),
+                  const Text("password : 123456"),
+                  const Text("*jika belum diubah",
+                      style: TextStyle(fontSize: 10)),
+                  const SizedBox(height: 20),
+                  const Text(
+                    "Akun percobaan hanya berlaku 7 hari !",
+                    style: TextStyle(color: Colors.red),
+                  ),
+                  const SizedBox(height: 20),
+                  const Text(
+                    "Untuk mendapatkan akses penuh silahkan hubungi kontak kami pada halaman 'Tentang Aplikasi' ",
+                    style: TextStyle(color: Color.fromARGB(255, 26, 189, 211)),
+                  ),
+                ],
+              ),
+            ),
+            actions: [
+              ElevatedButton(
+                child: const Text("Close"),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          ),
+        );
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,34 +127,33 @@ class _ProfileState extends State<Profile> {
                         ),
                         child: Stack(
                           children: [
-                            const Positioned(
-                              top: 15,
-                              left: 20,
-                              child: Row(
-                                children: [
-                                  Icon(
-                                    Icons.account_circle,
-                                    color: Colors.grey,
-                                    size: 80,
+                            Padding(
+                              padding: const EdgeInsets.all(16.0),
+                              child: ListTile(
+                                onTap: () {
+                                  // Tambahkan logika di sini
+                                },
+                                title: Text(
+                                  fullName,
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 30),
+                                ),
+                                subtitle: const Text(
+                                  "alpinjir@gmail.com",
+                                  style: TextStyle(
+                                    color: Colors.white,
                                   ),
-                                  SizedBox(width: 10),
-                                  Text(
-                                    'Username',
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      fontSize: 20,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            const Positioned(
-                              top: 20,
-                              right: 20,
-                              child: Icon(
-                                Icons.settings,
-                                color: Colors.grey,
-                                size: 30,
+                                ),
+                                leading: const Icon(
+                                  Icons.person,
+                                  color: Colors.white,
+                                  size: 70,
+                                ),
+                                trailing: const Icon(
+                                  Icons.settings,
+                                  color: Colors.grey,
+                                  size: 30,
+                                ),
                               ),
                             ),
                             Center(
@@ -98,7 +182,7 @@ class _ProfileState extends State<Profile> {
                                         children: [
                                           ListTile(
                                             onTap: () {
-                                              // Belum di import jir logikanya
+                                              fetchPrinterAddress(context);
                                             },
                                             title: const Text(
                                               'Printer Kasir',
@@ -119,13 +203,16 @@ class _ProfileState extends State<Profile> {
                                             ),
                                             trailing: const Icon(
                                               Icons.chevron_right,
-                                              color: Color.fromRGBO(255, 255, 255, 1.0),
+                                              color: Color.fromRGBO(
+                                                  255, 255, 255, 1.0),
                                             ),
                                           ),
-                                          const Divider(color: Color.fromRGBO(60, 60, 60, 1.0)),
+                                          const Divider(
+                                              color: Color.fromRGBO(
+                                                  60, 60, 60, 1.0)),
                                           ListTile(
                                             onTap: () {
-                                              // Belum di import jir logikanya
+                                              fetchPrinterKitchenAddress(context);
                                             },
                                             title: const Text(
                                               'Printer Dapur',
@@ -146,13 +233,16 @@ class _ProfileState extends State<Profile> {
                                             ),
                                             trailing: const Icon(
                                               Icons.chevron_right,
-                                              color: Color.fromRGBO(255, 255, 255, 1.0),
+                                              color: Color.fromRGBO(
+                                                  255, 255, 255, 1.0),
                                             ),
                                           ),
-                                          const Divider(color: Color.fromRGBO(60, 60, 60, 1.0)),
+                                          const Divider(
+                                              color: Color.fromRGBO(
+                                                  60, 60, 60, 1.0)),
                                           ListTile(
                                             onTap: () {
-                                              // Belum di import jir logikanya
+                                              fetchNewMenu(context);
                                             },
                                             title: const Text(
                                               'Bantuan',
@@ -173,14 +263,15 @@ class _ProfileState extends State<Profile> {
                                             ),
                                             trailing: const Icon(
                                               Icons.chevron_right,
-                                              color: Color.fromRGBO(255, 255, 255, 1.0),
+                                              color: Color.fromRGBO(
+                                                  255, 255, 255, 1.0),
                                             ),
                                           ),
-                                          const Divider(color: Color.fromRGBO(60, 60, 60, 1.0)),
+                                          const Divider(
+                                              color: Color.fromRGBO(
+                                                  60, 60, 60, 1.0)),
                                           ListTile(
-                                            onTap: () {
-                                              // Belum di import jir logikanya
-                                            },
+                                            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (_) => const AboutPage())),
                                             title: const Text(
                                               'Tentang Aplikasi',
                                               style: TextStyle(
@@ -200,13 +291,16 @@ class _ProfileState extends State<Profile> {
                                             ),
                                             trailing: const Icon(
                                               Icons.chevron_right,
-                                              color: Color.fromRGBO(255, 255, 255, 1.0),
+                                              color: Color.fromRGBO(
+                                                  255, 255, 255, 1.0),
                                             ),
                                           ),
-                                          const Divider(color: Color.fromRGBO(60, 60, 60, 1.0)),
+                                          const Divider(
+                                              color: Color.fromRGBO(
+                                                  60, 60, 60, 1.0)),
                                           ListTile(
                                             onTap: () {
-                                              // Belum di import jir logikanya
+                                              fetchLogout(context);
                                             },
                                             title: const Text(
                                               'Keluar',
@@ -227,7 +321,8 @@ class _ProfileState extends State<Profile> {
                                             ),
                                             trailing: const Icon(
                                               Icons.chevron_right,
-                                              color: Color.fromRGBO(255, 255, 255, 1.0),
+                                              color: Color.fromRGBO(
+                                                  255, 255, 255, 1.0),
                                             ),
                                           ),
                                         ],
@@ -250,4 +345,239 @@ class _ProfileState extends State<Profile> {
       ),
     );
   }
+
+  void fetchLogout(context) async {
+    // Remove data for the 'counter' key.
+    final prefs = await SharedPreferences.getInstance();
+    showLoaderDialog(context);
+    token = prefs.getString('token')!;
+    try {
+      Response response;
+      var dio = Dio();
+      dio.options.headers["authorization"] = "Bearer $token";
+      response = await dio.post(
+        Api.logout,
+        data: {},
+        options: Options(contentType: Headers.jsonContentType),
+      );
+
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        //berhasil
+        hideLoaderDialog(context);
+        //setSharedPreference
+        await prefs.remove('username');
+        await prefs.remove('user_group_name');
+        await prefs.remove('created_at');
+        await prefs.remove('token');
+        await prefs.remove('itemcategory');
+        //Messsage
+        CustomSnackbar.show(context, 'Logout Berhasil');
+        //SettingsPage
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const LoginPage()));
+      }
+    } on DioException catch (e) {
+      hideLoaderDialog(context);
+      if (e.response?.statusCode == 400 || e.response?.statusCode == 401) {
+        //gagal
+        String errorMessage = e.response?.data['message'];
+        CustomSnackbar.show(context, errorMessage, backgroundColor: Colors.red);
+      } else {
+        // print(e.message);
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => const LoginPage()));
+      }
+    }
+  }
+
+  Future <void> fetchPrinterAddress(context) async {
+    // Remove data for the 'counter' key.
+    final prefs = await SharedPreferences.getInstance();
+    showLoaderDialog(context);
+    token = prefs.getString('token')!;
+    try {
+      Response response;
+      var dio = Dio();
+      dio.options.headers["authorization"] = "Bearer $token";
+      response = await dio.post(
+        Api.printerAddress,
+        data: {
+          'user_id': userId
+        },
+        options: Options(contentType: Headers.jsonContentType),
+      );
+
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        //berhasil
+        hideLoaderDialog(context);
+        String prefPrinterAddress = response.data['data'].toString();
+        await prefs.setString('printer_address', prefPrinterAddress);
+        //SettingsPage
+        showModalBottomSheet(
+          context: context,
+          isScrollControlled: true,
+          isDismissible: false,
+          builder: (context) => const PrinterAddressPage(),
+        ).then((value) => rebuild());
+        //Messsage
+      }
+    } on DioException catch (e) {
+      hideLoaderDialog(context);
+      if (e.response?.statusCode == 400 || e.response?.statusCode == 401) {
+        //gagal
+        String errorMessage = e.response?.data['message'];
+        // Message
+        CustomSnackbar.show(context, errorMessage, backgroundColor: Colors.red);
+      } else {
+        /*print(e.message);*/
+        showModalBottomSheet(
+          context: context,
+          isScrollControlled: true,
+          isDismissible: false,
+          builder: (context) => const PrinterAddressPage(),
+        ).then((value) => rebuild());
+      }
+    }
+  }
+
+  Future <void> fetchPrinterKitchenAddress(context) async {
+    // Remove data for the 'counter' key.
+    final prefs = await SharedPreferences.getInstance();
+    showLoaderDialog(context);
+    token = prefs.getString('token')!;
+    try {
+      Response response;
+      var dio = Dio();
+      dio.options.headers["authorization"] = "Bearer $token";
+      response = await dio.post(
+        Api.printerKitchenAddress,
+        data: {
+          'user_id': userId
+        },
+        options: Options(contentType: Headers.jsonContentType),
+      );
+
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        // berhasil
+        hideLoaderDialog(context);
+        String prefPrinterKitchenAddress = response.data['data'].toString();
+        await prefs.setString('printer_kitchen_address', prefPrinterKitchenAddress);
+        //SettingsPage
+        showModalBottomSheet(
+          context: context,
+          isScrollControlled: true,
+          isDismissible: false,
+          builder: (context) => const PrinterKitchenAddressPage(),
+        ).then((value) => rebuild());
+      }
+    } on DioException catch (e) {
+      hideLoaderDialog(context);
+      if (e.response?.statusCode == 400 || e.response?.statusCode == 401) {
+        //gagal
+        String errorMessage = e.response?.data['message'];
+        // Message
+        CustomSnackbar.show(context, errorMessage, backgroundColor: Colors.red);
+      } else {
+        /*print(e.message);*/
+        showModalBottomSheet(
+          context: context,
+          isScrollControlled: true,
+          isDismissible: false,
+          builder: (context) => const PrinterKitchenAddressPage(),
+        ).then((value) => rebuild());
+      }
+    }
+  }
+
+  void _launchWhatsapp(context) async {
+    var contact = companyPhone;
+    var androidUrl = "whatsapp://send?phone=$contact&text=Halo, saya tertarik dengan produk Cipta Solutindo Tech";
+    var iosUrl = "https://wa.me/$contact?text=${Uri.parse('Halo, saya tertarik dengan produk Cipta Solutindo Tech')}";
+
+    try{
+      if (Platform.isIOS) {
+        await launchUrl(Uri.parse(iosUrl));
+      }
+      else{
+        await launchUrl(Uri.parse(androidUrl));
+      }
+    } on Exception{
+      CustomSnackbar.show(context, 'WhatsApp belum terinstall di perangkat anda', backgroundColor: Colors.red);
+    }
+  }
+
+  fetchCategories(context) async {
+    // Remove data for the 'counter' key.
+    final prefs = await SharedPreferences.getInstance();
+    showLoaderDialog(context);
+    token = prefs.getString('token')!;
+    try {
+      Response response;
+      var dio = Dio();
+      dio.options.headers["authorization"] = "Bearer $token";
+      response = await dio.post(
+        Api.itemCategoryNewMenu,
+        data: {
+          'user_id': userId
+        },
+        options: Options(contentType: Headers.jsonContentType),
+      );
+
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        //berhasil
+        hideLoaderDialog(context);
+        String itemCategory = json.encode(response.data['data']);
+        await prefs.setString('itemcategory', itemCategory);
+        // print(itemCategory[0]);
+        //SettingsPage
+        Navigator.of(context).push(MaterialPageRoute(builder: (_) => const CategoryPage()));
+      }
+    } on DioException catch (e) {
+      hideLoaderDialog(context);
+      if (e.response?.statusCode == 400 || e.response?.statusCode == 401) {
+        //gagal
+        String errorMessage = e.response?.data['message'];
+        CustomSnackbar.show(context, errorMessage, backgroundColor: Colors.red);
+      } else {}
+    }
+  }
+
+  void fetchNewMenu(context) async {
+    // Remove data for the 'counter' key.
+    final prefs = await SharedPreferences.getInstance();
+    // showLoaderDialog(context);
+    token = prefs.getString('token')!;
+    try {
+      Response response;
+      var dio = Dio();
+      dio.options.headers["authorization"] = "Bearer $token";
+      response = await dio.post(
+        Api.itemCategoryNewMenu,
+        data: {
+          'user_id': userId
+        },
+        options: Options(contentType: Headers.jsonContentType),
+      );
+
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        //berhasil
+        // hideLoaderDialog(context);
+        String itemCategory = json.encode(response.data['data']);
+        await prefs.setString('itemcategory', itemCategory);
+        // print(itemCategory[0]);
+        Navigator.of(context).push(MaterialPageRoute(builder: (_) => const HelpPage()));
+        /*setState(() {
+          itemCategoryJson = response.data['data'];
+        });*/
+      }
+    } on DioException catch (e) {
+      // hideLoaderDialog(context);
+      if (e.response?.statusCode == 400 || e.response?.statusCode == 401) {
+        //gagal
+        String errorMessage = e.response?.data['message'];
+        CustomSnackbar.show(context, errorMessage, backgroundColor: Colors.red);
+      } else {
+
+      }
+    }
+  }
+
 }
