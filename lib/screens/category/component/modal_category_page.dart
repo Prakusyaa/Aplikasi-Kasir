@@ -66,9 +66,9 @@ class _ModalCategoryPageState extends State<ModalCategoryPage> {
         ),
       ),
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepOrange,
-        foregroundColor: Colors.white,
-        shadowColor: Colors.orangeAccent,
+        foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+        backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
+        shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
         elevation: 3,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)),
@@ -86,7 +86,7 @@ class _ModalCategoryPageState extends State<ModalCategoryPage> {
         return Container(
           width: MediaQuery.of(context).size.width,
           decoration: const BoxDecoration(
-              color: Color.fromRGBO(255, 255, 255, 0.9),
+              color: Color.fromRGBO(39, 39, 39, 1.0),
               borderRadius: BorderRadius.only(
                   topRight: Radius.circular(30), topLeft: Radius.circular(30)
               )
@@ -105,6 +105,7 @@ class _ModalCategoryPageState extends State<ModalCategoryPage> {
                 width: double.infinity,
                 child: SvgPicture.asset(
                   'assets/icons/divider-icon.svg',
+                  color: Colors.black26,
                   height: 4,
                   width: 50,
                 ),
@@ -113,7 +114,7 @@ class _ModalCategoryPageState extends State<ModalCategoryPage> {
                 child: Text(
                   "Tambah Kategori",
                   style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontSize: 18,
                       fontWeight: FontWeight.bold
                   ),
@@ -138,8 +139,18 @@ class _ModalCategoryPageState extends State<ModalCategoryPage> {
                               children: [
                                 Card(
                                   elevation: 2,
-                                  shadowColor: Colors.grey,
+                                  shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                                   child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Color.fromRGBO(25, 25, 25, 1.0),
+                                      borderRadius: BorderRadius.circular(8),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black.withOpacity(0.15),
+                                          blurRadius: 6,
+                                        )
+                                      ],
+                                    ),
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 10,
                                         horizontal: 10
@@ -205,8 +216,18 @@ class _ModalCategoryPageState extends State<ModalCategoryPage> {
                                 const SizedBox(height: 4),
                                 Card(
                                   elevation: 2,
-                                  shadowColor: Colors.grey,
+                                  shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                                   child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Color.fromRGBO(25, 25, 25, 1.0),
+                                      borderRadius: BorderRadius.circular(8),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black.withOpacity(0.15),
+                                          blurRadius: 6,
+                                        )
+                                      ],
+                                    ),
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 10,
                                         horizontal: 10
@@ -217,6 +238,7 @@ class _ModalCategoryPageState extends State<ModalCategoryPage> {
                                         const Text(
                                           'Nama Kategori',
                                           style: TextStyle(
+                                            color: Colors.white,
                                               fontSize: 14,
                                               fontWeight: FontWeight.bold
                                           ),
@@ -272,8 +294,18 @@ class _ModalCategoryPageState extends State<ModalCategoryPage> {
                                 const SizedBox(height: 4),
                                 Card(
                                   elevation: 2,
-                                  shadowColor: Colors.grey,
+                                  shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                                   child: Container(
+                                    decoration: BoxDecoration(
+                                      color: Color.fromRGBO(25, 25, 25, 1.0),
+                                      borderRadius: BorderRadius.circular(8),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          color: Colors.black.withOpacity(0.15),
+                                          blurRadius: 6,
+                                        )
+                                      ],
+                                    ),
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 10,
                                         horizontal: 10
@@ -284,6 +316,7 @@ class _ModalCategoryPageState extends State<ModalCategoryPage> {
                                         const Text(
                                           'Keterangan',
                                           style: TextStyle(
+                                            color: Colors.white,
                                               fontSize: 14,
                                               fontWeight: FontWeight.bold
                                           ),

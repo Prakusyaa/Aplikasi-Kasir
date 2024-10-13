@@ -114,7 +114,7 @@ class _MenuPageState extends State<MenuPage> {
                         ),
                         ListTile(
                           leading: const Icon(
-                              Icons.menu,
+                              Icons.emoji_food_beverage_outlined,
                               color: Color.fromRGBO(255, 255, 255, 1.0),
                           ),
                           title: const Text(
