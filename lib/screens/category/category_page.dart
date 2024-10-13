@@ -12,7 +12,6 @@ import 'package:mozaic_app/screens/category/component/tablet/modal_unit_page_tab
 import 'package:mozaic_app/widget/custom_snackbar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../style/app_properties.dart';
 import '../../utility/currency_format.dart';
 import '../../widget/custom_loading.dart';
 import 'component/modal_category_page.dart';
@@ -116,7 +115,7 @@ class _CategoryPageState extends State<CategoryPage> {
       ),
       style: ElevatedButton.styleFrom(
         foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
-        backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
+        backgroundColor: const Color.fromRGBO(51, 51, 51, 1.0),
         shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
         elevation: 3,
         shape: RoundedRectangleBorder(
@@ -162,7 +161,7 @@ class _CategoryPageState extends State<CategoryPage> {
       ),
       style: ElevatedButton.styleFrom(
         foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
-        backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
+        backgroundColor: const Color.fromRGBO(51, 51, 51, 1.0),
         shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
         elevation: 3,
         shape: RoundedRectangleBorder(
@@ -208,7 +207,7 @@ class _CategoryPageState extends State<CategoryPage> {
       ),
       style: ElevatedButton.styleFrom(
         foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
-        backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
+        backgroundColor: const Color.fromRGBO(51, 51, 51, 1.0),
         shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
         elevation: 3,
         shape: RoundedRectangleBorder(
@@ -241,9 +240,9 @@ class _CategoryPageState extends State<CategoryPage> {
         ),
       ),
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepOrange,
-        foregroundColor: Colors.white,
-        shadowColor: Colors.orangeAccent,
+        foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+        backgroundColor: const Color.fromRGBO(51, 51, 51, 1.0),
+        shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
         elevation: 3,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)),
@@ -274,9 +273,9 @@ class _CategoryPageState extends State<CategoryPage> {
         ),
       ),
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepOrange,
-        foregroundColor: Colors.white,
-        shadowColor: Colors.orangeAccent,
+        foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+        backgroundColor: const Color.fromRGBO(51, 51, 51, 1.0),
+        shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
         elevation: 3,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)),
@@ -307,9 +306,9 @@ class _CategoryPageState extends State<CategoryPage> {
         ),
       ),
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepOrange,
-        foregroundColor: Colors.white,
-        shadowColor: Colors.orangeAccent,
+        foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+        backgroundColor: const Color.fromRGBO(51, 51, 51, 1.0),
+        shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
         elevation: 3,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)),
@@ -323,23 +322,22 @@ class _CategoryPageState extends State<CategoryPage> {
             double screenWidth = constraints.maxWidth;
             double columnWidth = screenWidth / 2;
             return Scaffold(
-              appBar: AppBar(
-                centerTitle: false,
-                titleSpacing: 0,
-                automaticallyImplyLeading: true,
-                backgroundColor: const Color(0xffFDC054),
-                elevation: 0,
-                scrolledUnderElevation: 0,
-                leadingWidth: 70,
-                title: const Text(
-                  "Menu Baru",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 28,
-                      fontWeight: FontWeight.w500
+                backgroundColor: const Color.fromRGBO(45, 45, 45, 1.0),
+                appBar: AppBar(
+                  iconTheme: const IconThemeData(
+                    color: Colors.white,
                   ),
+                  backgroundColor: Color.fromRGBO(25, 25, 25, 1.0),
+                  title: const Text(
+                    'Menu Baru',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18
+                    ),
+                  ),
+                  elevation: 0,
+                  systemOverlayStyle: SystemUiOverlayStyle.dark,
                 ),
-              ),
               body: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -355,8 +353,18 @@ class _CategoryPageState extends State<CategoryPage> {
                           const SizedBox(height: 10),
                           Card(
                             elevation: 2,
-                            shadowColor: Colors.grey,
+                            shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                             child: Container(
+                              decoration: BoxDecoration(
+                                color: Color.fromRGBO(25, 25, 25, 1.0),
+                                borderRadius: BorderRadius.circular(8),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.15),
+                                    blurRadius: 6,
+                                  )
+                                ],
+                              ),
                               padding: const EdgeInsets.symmetric(
                                   vertical: 10,
                                   horizontal: 10
@@ -367,6 +375,7 @@ class _CategoryPageState extends State<CategoryPage> {
                                   const Text(
                                     'Kategori',
                                     style: TextStyle(
+                                      color: Colors.white,
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold
                                     ),
@@ -421,8 +430,18 @@ class _CategoryPageState extends State<CategoryPage> {
                           const SizedBox(height: 10),
                           Card(
                             elevation: 2,
-                            shadowColor: Colors.grey,
+                            shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                             child: Container(
+                              decoration: BoxDecoration(
+                                color: Color.fromRGBO(25, 25, 25, 1.0),
+                                borderRadius: BorderRadius.circular(8),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.15),
+                                    blurRadius: 6,
+                                  )
+                                ],
+                              ),
                               padding: const EdgeInsets.symmetric(
                                   vertical: 10,
                                   horizontal: 10
@@ -433,6 +452,7 @@ class _CategoryPageState extends State<CategoryPage> {
                                   const Text(
                                     'Pencarian',
                                     style: TextStyle(
+                                      color: Colors.white,
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold
                                     ),
@@ -486,8 +506,18 @@ class _CategoryPageState extends State<CategoryPage> {
                           const SizedBox(height: 10),
                           Card(
                             elevation: 2,
-                            shadowColor: Colors.grey,
+                            shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                             child: Container(
+                              decoration: BoxDecoration(
+                                color: Color.fromRGBO(25, 25, 25, 1.0),
+                                borderRadius: BorderRadius.circular(8),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.15),
+                                    blurRadius: 6,
+                                  )
+                                ],
+                              ),
                               padding: const EdgeInsets.symmetric(
                                   vertical: 10,
                                   horizontal: 10
@@ -498,6 +528,7 @@ class _CategoryPageState extends State<CategoryPage> {
                                   const Text(
                                     'Menu Tambah',
                                     style: TextStyle(
+                                      color: Colors.white,
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold
                                     ),
@@ -508,10 +539,9 @@ class _CategoryPageState extends State<CategoryPage> {
                                     children: [
                                       tambahCategoryButtonLandscape,
                                       tambahSatuanButtonLandscape,
+                                      tambahBarangButtonLandscape,
                                     ],
                                   ),
-                                  const SizedBox(height: 5),
-                                  Center(child: tambahBarangButtonLandscape)
                                 ],
                               ),
                             ),
@@ -544,19 +574,20 @@ class _CategoryPageState extends State<CategoryPage> {
             );
           },
         ) : Scaffold(
-          backgroundColor: yellow,
+          backgroundColor: const Color.fromRGBO(45, 45, 45, 1.0),
           appBar: AppBar(
-            iconTheme: const IconThemeData(color: Colors.black),
-            backgroundColor: Colors.transparent,
+            iconTheme: const IconThemeData(
+              color: Colors.white,
+            ),
+            backgroundColor: Color.fromRGBO(25, 25, 25, 1.0),
             title: const Text(
               'Menu Baru',
               style: TextStyle(
-                  color: darkGrey,
+                  color: Colors.white,
                   fontSize: 18
               ),
             ),
             elevation: 0,
-            scrolledUnderElevation: 0,
             systemOverlayStyle: SystemUiOverlayStyle.dark,
           ),
           body: SafeArea(
@@ -569,8 +600,18 @@ class _CategoryPageState extends State<CategoryPage> {
                     children: [
                       Card(
                         elevation: 2,
-                        shadowColor: Colors.grey,
+                        shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                         child: Container(
+                          decoration: BoxDecoration(
+                            color: Color.fromRGBO(25, 25, 25, 1.0),
+                            borderRadius: BorderRadius.circular(8),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.15),
+                                blurRadius: 6,
+                              )
+                            ],
+                          ),
                           padding: const EdgeInsets.symmetric(
                               vertical: 10,
                               horizontal: 10
@@ -581,6 +622,7 @@ class _CategoryPageState extends State<CategoryPage> {
                               const Text(
                                 'Kategori',
                                 style: TextStyle(
+                                  color: Colors.white,
                                     fontSize: 14,
                                     fontWeight: FontWeight.bold
                                 ),
@@ -670,15 +712,14 @@ class _CategoryPageState extends State<CategoryPage> {
                                   mainAxisSize: MainAxisSize.min,
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
-                                    tambahCategoryButton,
-                                    const SizedBox(width:6),
                                     tambahSatuanButton,
+                                    const SizedBox(width: 20),
+                                    tambahBarangButton,
+                                    const SizedBox(width: 20),
+                                    tambahCategoryButton,
                                   ],
                                 ),
                               ),
-                              Center(
-                                child: tambahBarangButton,
-                              )
                             ],
                           ),
                         ),
@@ -733,7 +774,7 @@ class _CategoryPageState extends State<CategoryPage> {
         horizontal: 6,
       ),
       elevation: 4,
-      shadowColor: Colors.grey,
+      shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
       child: GestureDetector(
         onTap: () {
 
@@ -742,11 +783,11 @@ class _CategoryPageState extends State<CategoryPage> {
             onTap: () {
               _onListTileTapped(itemJson[index]);
             },
-            tileColor: Colors.white,
+            tileColor: const Color.fromRGBO(25, 25, 25, 1.0),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
                 side: const BorderSide(
-                  color: Color(0xffF68D7F),
+                  color: Color(0x3dffffff),
                   width: 1,
                 )
             ),
@@ -764,7 +805,7 @@ class _CategoryPageState extends State<CategoryPage> {
                     width: 50,
                     height: 50,
                     decoration: const BoxDecoration(
-                      color: Color(0xffF68D7F),
+                      color: Color(0xff474747),
                       borderRadius: BorderRadius.all(Radius.circular(4)),
                     ),
                     child: Center(
@@ -786,7 +827,7 @@ class _CategoryPageState extends State<CategoryPage> {
                 itemJson[index]['item_name'],
                 overflow: TextOverflow.ellipsis,
                 style: const TextStyle(
-                    color: Colors.black,
+                    color: Colors.white,
                     fontSize: 18,
                     fontWeight: FontWeight.normal
                 ),
@@ -795,7 +836,7 @@ class _CategoryPageState extends State<CategoryPage> {
             subtitle: Text(
                 CurrencyFormat.convertToIdr(int.parse(itemJson[index]['item_unit_price']), 0),
                 style: const TextStyle(
-                    color: Colors.black,
+                    color: Colors.white,
                     fontSize: 16,
                     fontWeight: FontWeight.normal
                 )
@@ -813,7 +854,7 @@ class _CategoryPageState extends State<CategoryPage> {
         horizontal: 26,
       ),
       elevation: 4,
-      shadowColor: Colors.grey,
+      shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
       child: GestureDetector(
         onTap: () {
 
@@ -822,11 +863,11 @@ class _CategoryPageState extends State<CategoryPage> {
             onTap: () {
               _onListTileTapped(itemJson[index]);
             },
-            tileColor: Colors.white,
+            tileColor: Color.fromRGBO(25, 25, 25, 1.0),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(12),
                 side: const BorderSide(
-                  color: Color(0xffF68D7F),
+                  color: Color(0x3dffffff),
                   width: 1,
                 )
             ),
@@ -843,7 +884,7 @@ class _CategoryPageState extends State<CategoryPage> {
                     width: 40,
                     height: 40,
                     decoration: const BoxDecoration(
-                      color: Color(0xffF68D7F),
+                      color: Color(0x3dffffff),
                       borderRadius: BorderRadius.all(Radius.circular(4)),
                     ),
                     child: Center(
@@ -865,7 +906,7 @@ class _CategoryPageState extends State<CategoryPage> {
                 itemJson[index]['item_name'],
                 overflow: TextOverflow.ellipsis,
                 style: const TextStyle(
-                    color: Colors.black,
+                    color: Colors.white,
                     fontSize: 18,
                     fontWeight: FontWeight.normal
                 ),
@@ -874,7 +915,7 @@ class _CategoryPageState extends State<CategoryPage> {
             subtitle: Text(
                 CurrencyFormat.convertToIdr(int.parse(itemJson[index]['item_unit_price']), 0),
                 style: const TextStyle(
-                    color: Colors.black,
+                    color: Colors.white,
                     fontSize: 18,
                     fontWeight: FontWeight.normal
                 )
