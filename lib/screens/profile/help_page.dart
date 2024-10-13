@@ -45,9 +45,9 @@ class _HelpPageState extends State<HelpPage> {
         ),
       ),
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepOrange,
-        foregroundColor: Colors.white,
-        shadowColor: Colors.orangeAccent,
+        foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+        backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
+        shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
         elevation: 3,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)),
@@ -78,9 +78,9 @@ class _HelpPageState extends State<HelpPage> {
         ),
       ),
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepOrange,
-        foregroundColor: Colors.white,
-        shadowColor: Colors.orangeAccent,
+        foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+        backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
+        shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
         elevation: 3,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)),
@@ -111,9 +111,9 @@ class _HelpPageState extends State<HelpPage> {
         ),
       ),
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepOrange,
-        foregroundColor: Colors.white,
-        shadowColor: Colors.orangeAccent,
+        foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+        backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
+        shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
         elevation: 3,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)),
@@ -139,9 +139,9 @@ class _HelpPageState extends State<HelpPage> {
         ),
       ),
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepOrange,
-        foregroundColor: Colors.white,
-        shadowColor: Colors.orangeAccent,
+        foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+        backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
+        shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
         elevation: 3,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)),
@@ -153,7 +153,7 @@ class _HelpPageState extends State<HelpPage> {
         return orientation == Orientation.landscape ? Material(
           child: Container(
             decoration: BoxDecoration(
-                color: Colors.grey[100],
+                color: Color.fromRGBO(45, 45, 45, 1.0),
                 image: const DecorationImage(image: AssetImage('assets/background.png')
                 )
             ),
@@ -186,6 +186,7 @@ class _HelpPageState extends State<HelpPage> {
                             'Setting Printer',
                             textAlign: TextAlign.left,
                             style: TextStyle(
+                              color: Colors.white,
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold
                             ),
@@ -200,7 +201,7 @@ class _HelpPageState extends State<HelpPage> {
                             'Anda dapat mengatur printer manual dengan memasukkan nama printer kedalam aplikasi Mozaic agar dapat tampil sewaktu dipindai.',
                             textAlign: TextAlign.left,
                             style: TextStyle(
-                              color: Colors.grey.shade600,
+                              color: Colors.white,
                               fontSize: 18,
                             ),
                           ),
@@ -233,6 +234,7 @@ class _HelpPageState extends State<HelpPage> {
                             'Uang Modal ',
                             textAlign: TextAlign.left,
                             style: TextStyle(
+                              color: Colors.white,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20
                             ),
@@ -247,7 +249,7 @@ class _HelpPageState extends State<HelpPage> {
                             'Masukkan uang modal sebagai modal usaha',
                             textAlign: TextAlign.left,
                             style: TextStyle(
-                                color: Colors.grey.shade600,
+                                color: Colors.white,
                                 fontSize: 18
                             ),
                           ),
@@ -280,6 +282,7 @@ class _HelpPageState extends State<HelpPage> {
                             'Menu Baru',
                             textAlign: TextAlign.left,
                             style: TextStyle(
+                              color: Colors.white,
                                 fontWeight: FontWeight.bold,
                                 fontSize: 20
                             ),
@@ -294,7 +297,7 @@ class _HelpPageState extends State<HelpPage> {
                             'Anda dapat mengatur Kategori, Item, Barang sesuai kebutuhan anda didalam aplikasi Mozaic Point of Sale.',
                             textAlign: TextAlign.left,
                             style: TextStyle(
-                                color: Colors.grey.shade600,
+                                color: Colors.white,
                                 fontSize: 18
                             ),
                           ),
@@ -326,7 +329,7 @@ class _HelpPageState extends State<HelpPage> {
                               decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   border: Border.all(color: Colors.black, width: 2),
-                                  color: pageIndex == 0 ? yellow : Colors.white),
+                                  color: pageIndex == 0 ? Colors.blueGrey : Colors.white),
                             ),
                             Container(
                               margin: const EdgeInsets.all(8),
@@ -335,7 +338,7 @@ class _HelpPageState extends State<HelpPage> {
                               decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   border: Border.all(color: Colors.black, width: 2),
-                                  color: pageIndex == 1 ? yellow : Colors.white),
+                                  color: pageIndex == 1 ? Colors.blueGrey : Colors.white),
                             ),
                             Container(
                               margin: const EdgeInsets.all(8),
@@ -344,7 +347,7 @@ class _HelpPageState extends State<HelpPage> {
                               decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   border: Border.all(color: Colors.black, width: 2),
-                                  color: pageIndex == 2 ? yellow : Colors.white),
+                                  color: pageIndex == 2 ? Colors.blueGrey : Colors.white),
                             )
                           ],
                         ),
@@ -357,7 +360,7 @@ class _HelpPageState extends State<HelpPage> {
                                 child: const Text(
                                   'SKIP',
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.white,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 16
                                   ),
@@ -370,7 +373,7 @@ class _HelpPageState extends State<HelpPage> {
                               child: const Text(
                                 'NEXT',
                                 style: TextStyle(
-                                    color: Colors.black,
+                                    color: Colors.white,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 16
                                 ),
@@ -406,7 +409,7 @@ class _HelpPageState extends State<HelpPage> {
           child: Container(
             //      width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
-                color: Colors.grey[100],
+                color: Color.fromRGBO(45, 45, 45, 1.0),
                 image: const DecorationImage(image: AssetImage('assets/background.png')
                 )
             ),
@@ -437,6 +440,7 @@ class _HelpPageState extends State<HelpPage> {
                             'Setting Printer',
                             textAlign: TextAlign.right,
                             style: TextStyle(
+                              color: Colors.white,
                                 fontWeight: FontWeight.bold, fontSize: 16),
                           ),
                         ),
@@ -446,7 +450,7 @@ class _HelpPageState extends State<HelpPage> {
                           child: Text(
                             'Anda dapat mengatur printer manual dengan memasukkan nama printer kedalam aplikasi Mozaic agar dapat tampil sewaktu dipindai.',
                             textAlign: TextAlign.right,
-                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                            style: TextStyle(color: Colors.white, fontSize: 12),
                           ),
                         ),
                         Row(
@@ -511,6 +515,7 @@ class _HelpPageState extends State<HelpPage> {
                             'Menu Baru',
                             textAlign: TextAlign.right,
                             style: TextStyle(
+                              color: Colors.white,
                                 fontWeight: FontWeight.bold, fontSize: 16),
                           ),
                         ),
@@ -520,7 +525,7 @@ class _HelpPageState extends State<HelpPage> {
                           child: Text(
                             'Anda dapat mengatur Kategori, Item, Barang sesuai kebutuhan anda didalam aplikasi Mozaic Point of Sale ini.',
                             textAlign: TextAlign.right,
-                            style: TextStyle(color: Colors.grey, fontSize: 12),
+                            style: TextStyle(color: Colors.white, fontSize: 12),
                           ),
                         ),
                         Padding(
@@ -548,7 +553,7 @@ class _HelpPageState extends State<HelpPage> {
                               decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   border: Border.all(color: Colors.black, width: 2),
-                                  color: pageIndex == 0 ? yellow : Colors.white),
+                                  color: pageIndex == 0 ? Colors.blueGrey : Colors.white),
                             ),
                             Container(
                               margin: const EdgeInsets.all(8),
@@ -557,7 +562,7 @@ class _HelpPageState extends State<HelpPage> {
                               decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   border: Border.all(color: Colors.black, width: 2),
-                                  color: pageIndex == 1 ? yellow : Colors.white),
+                                  color: pageIndex == 1 ? Colors.blueGrey : Colors.white),
                             ),
                             Container(
                               margin: const EdgeInsets.all(8),
@@ -566,7 +571,7 @@ class _HelpPageState extends State<HelpPage> {
                               decoration: BoxDecoration(
                                   shape: BoxShape.circle,
                                   border: Border.all(color: Colors.black, width: 2),
-                                  color: pageIndex == 2 ? yellow : Colors.white),
+                                  color: pageIndex == 2 ? Colors.blueGrey : Colors.white),
                             )
                           ],
                         ),
@@ -579,7 +584,7 @@ class _HelpPageState extends State<HelpPage> {
                                 child: const Text(
                                   'SKIP',
                                   style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.white,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 16
                                   ),
@@ -592,7 +597,7 @@ class _HelpPageState extends State<HelpPage> {
                               child: const Text(
                                 'NEXT',
                                 style: TextStyle(
-                                    color: Colors.black,
+                                    color: Colors.white,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 16
                                 ),

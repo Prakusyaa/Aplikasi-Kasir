@@ -74,9 +74,9 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
         ),
       ),
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepOrange,
-        foregroundColor: Colors.white,
-        shadowColor: Colors.orangeAccent,
+        foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+        backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
+        shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
         elevation: 3,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)),
@@ -90,22 +90,22 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
             double screenWidth = constraints.maxWidth;
             double columnWidth = screenWidth / 2;
             return Scaffold(
-              backgroundColor: Colors.white,
+              backgroundColor: const Color.fromRGBO(45, 45, 45, 1.0),
               appBar: AppBar(
-                scrolledUnderElevation: 0,
-                iconTheme: const IconThemeData(
-                  color: Colors.black,
-                ),
-                backgroundColor: Colors.transparent,
+                centerTitle: false,
+                titleSpacing: 0,
+                automaticallyImplyLeading: true,
+                backgroundColor: const Color(0xff191919),
+                elevation: 0,
+                leadingWidth: 70,
                 title: const Text(
-                  'Ganti Password',
+                  "Ganti Password",
                   style: TextStyle(
-                      color: darkGrey,
-                      fontSize: 28
+                      color: Colors.white,
+                      fontSize: 28,
+                      fontWeight: FontWeight.w500
                   ),
                 ),
-                elevation: 0,
-                systemOverlayStyle: SystemUiOverlayStyle.dark,
               ),
               body: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -114,7 +114,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                     width: columnWidth,
                     decoration: const BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage('assets/mozaic/logo-baru-set-07.png'),
+                          image: AssetImage('assets/mozaic/logo-baru-set-05.png'),
                           fit: BoxFit.contain,
                         )
                     ),
@@ -127,8 +127,18 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                         children: [
                           Card(
                             elevation: 2,
-                            shadowColor: Colors.grey,
+                            shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                             child: Container(
+                              decoration: BoxDecoration(
+                                color: Color.fromRGBO(25, 25, 25, 1.0),
+                                borderRadius: BorderRadius.circular(8),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.15),
+                                    blurRadius: 6,
+                                  )
+                                ],
+                              ),
                               padding: const EdgeInsets.symmetric(
                                   vertical: 10,
                                   horizontal: 10
@@ -139,6 +149,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                                   const Text(
                                     'Password Lama',
                                     style: TextStyle(
+                                      color: Colors.white,
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold
                                     ),
@@ -207,8 +218,18 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                           ),
                           Card(
                             elevation: 2,
-                            shadowColor: Colors.grey,
+                            shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                             child: Container(
+                              decoration: BoxDecoration(
+                                color: Color.fromRGBO(25, 25, 25, 1.0),
+                                borderRadius: BorderRadius.circular(8),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.15),
+                                    blurRadius: 6,
+                                  )
+                                ],
+                              ),
                               padding: const EdgeInsets.symmetric(
                                   vertical: 10,
                                   horizontal: 10
@@ -219,6 +240,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                                   const Text(
                                     'Password Baru',
                                     style: TextStyle(
+                                      color: Colors.white,
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold
                                     ),
@@ -296,16 +318,16 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
             );
           },
         ) : Scaffold(
-          backgroundColor: Colors.white,
+          backgroundColor: Color.fromRGBO(45, 45, 45, 1.0),
           appBar: AppBar(
             iconTheme: const IconThemeData(
-              color: Colors.black,
+              color: Colors.white,
             ),
-            backgroundColor: yellow,
+            backgroundColor: Color.fromRGBO(25, 25, 25, 1.0),
             title: const Text(
               'Setting Password',
               style: TextStyle(
-                  color: darkGrey,
+                  color: Colors.white,
                   fontSize: 18
               ),
             ),
@@ -325,8 +347,18 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                           const SizedBox(height: 10),
                           Card(
                             elevation: 2,
-                            shadowColor: Colors.grey,
+                            shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                             child: Container(
+                              decoration: BoxDecoration(
+                                color: Color.fromRGBO(25, 25, 25, 1.0),
+                                borderRadius: BorderRadius.circular(8),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.15),
+                                    blurRadius: 6,
+                                  )
+                                ],
+                              ),
                               padding: const EdgeInsets.symmetric(
                                   vertical: 10,
                                   horizontal: 10
@@ -337,6 +369,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                                   const Text(
                                     'Password Lama',
                                     style: TextStyle(
+                                      color: Colors.white,
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold
                                     ),
@@ -407,6 +440,16 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                             elevation: 2,
                             shadowColor: Colors.grey,
                             child: Container(
+                              decoration: BoxDecoration(
+                                color: Color.fromRGBO(25, 25, 25, 1.0),
+                                borderRadius: BorderRadius.circular(8),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.15),
+                                    blurRadius: 6,
+                                  )
+                                ],
+                              ),
                               padding: const EdgeInsets.symmetric(
                                   vertical: 10,
                                   horizontal: 10
@@ -417,6 +460,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                                   const Text(
                                     'Password Baru',
                                     style: TextStyle(
+                                      color: Colors.white,
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold
                                     ),

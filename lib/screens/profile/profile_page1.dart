@@ -1,13 +1,10 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../api/api_endpoint.dart';
-import '../../constant/app_constant.dart';
 import '../../widget/custom_loading.dart';
 import '../../widget/custom_snackbar.dart';
 import '../auth/login_page.dart';
@@ -16,6 +13,7 @@ import '../printer/printer_address_page.dart';
 import '../printer/printer_kitchen_address_page.dart';
 import 'about_page.dart';
 import 'help_page.dart';
+import 'menu.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -131,11 +129,11 @@ class _ProfileState extends State<Profile> {
                               padding: const EdgeInsets.all(16.0),
                               child: ListTile(
                                 onTap: () {
-                                  // Tambahkan logika di sini
+                                  fetchSettings(context);
                                 },
                                 title: Text(
                                   fullName,
-                                  style: TextStyle(
+                                  style: const TextStyle(
                                       color: Colors.white, fontSize: 30),
                                 ),
                                 subtitle: const Text(
@@ -487,22 +485,6 @@ class _ProfileState extends State<Profile> {
     }
   }
 
-  void _launchWhatsapp(context) async {
-    var contact = companyPhone;
-    var androidUrl = "whatsapp://send?phone=$contact&text=Halo, saya tertarik dengan produk Cipta Solutindo Tech";
-    var iosUrl = "https://wa.me/$contact?text=${Uri.parse('Halo, saya tertarik dengan produk Cipta Solutindo Tech')}";
-
-    try{
-      if (Platform.isIOS) {
-        await launchUrl(Uri.parse(iosUrl));
-      }
-      else{
-        await launchUrl(Uri.parse(androidUrl));
-      }
-    } on Exception{
-      CustomSnackbar.show(context, 'WhatsApp belum terinstall di perangkat anda', backgroundColor: Colors.red);
-    }
-  }
 
   fetchCategories(context) async {
     // Remove data for the 'counter' key.
@@ -580,4 +562,50 @@ class _ProfileState extends State<Profile> {
     }
   }
 
+  Future <void> fetchSettings(context) async {
+    final prefs = await SharedPreferences.getInstance();
+    showLoaderDialog(context);
+    token = prefs.getString('token')!;
+    try {
+      Response response;
+      var dio = Dio();
+      dio.options.headers["authorization"] = "Bearer $token";
+      response = await dio.post(
+        Api.printerAddress,
+        data: {
+          'user_id': userId
+        },
+        options: Options(contentType: Headers.jsonContentType),
+      );
+
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        //berhasil
+        hideLoaderDialog(context);
+        //SettingsPage
+        showModalBottomSheet(
+          context: context,
+          isScrollControlled: true,
+          isDismissible: false,
+          builder: (context) => const MenuPage(),
+        ).then((value) => rebuild());
+        //Messsage
+      }
+    } on DioException catch (e) {
+      hideLoaderDialog(context);
+      if (e.response?.statusCode == 400 || e.response?.statusCode == 401) {
+        //gagal
+        String errorMessage = e.response?.data['message'];
+        // Message
+        CustomSnackbar.show(context, errorMessage, backgroundColor: Colors.red);
+      } else {
+        /*print(e.message);*/
+        showModalBottomSheet(
+          context: context,
+          isScrollControlled: true,
+          isDismissible: false,
+          builder: (context) => const MenuPage(),
+        ).then((value) => rebuild());
+      }
+    }
+  }
 }
