@@ -71,7 +71,7 @@ class _MainBottomNavigationState extends State<MainBottomNavigation> with Ticker
           curve: Curves.ease
       );
     });
-  }
+  } //
 
   List<Widget> listPage = [
     const Profile(),
