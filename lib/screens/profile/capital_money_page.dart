@@ -6,7 +6,6 @@ import 'package:mozaic_app/screens/main/main_bottom_navigation.dart';
 import 'package:mozaic_app/widget/custom_snackbar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../style/app_properties.dart';
 
 class CapitalMoneyPage extends StatefulWidget {
   const CapitalMoneyPage({super.key});
@@ -70,9 +69,9 @@ class _CapitalMoneyPageState extends State<CapitalMoneyPage> {
         ),
       ),
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepOrange,
-        foregroundColor: Colors.white,
-        shadowColor: Colors.orangeAccent,
+        foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+        backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
+        shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
         elevation: 3,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)),
@@ -86,23 +85,23 @@ class _CapitalMoneyPageState extends State<CapitalMoneyPage> {
             double screenWidth = constraints.maxWidth;
             double columnWidth = screenWidth / 2;
             return Scaffold(
-              backgroundColor: Colors.white,
-              appBar: AppBar(
-                scrolledUnderElevation: 0,
-                iconTheme: const IconThemeData(
-                  color: Colors.black,
-                ),
-                backgroundColor: Colors.transparent,
-                title: const Text(
-                  'Uang Modal',
-                  style: TextStyle(
-                      color: darkGrey,
-                      fontSize: 28
+                backgroundColor: const Color.fromRGBO(45, 45, 45, 1.0),
+                appBar: AppBar(
+                  centerTitle: false,
+                  titleSpacing: 0,
+                  automaticallyImplyLeading: true,
+                  backgroundColor: const Color(0xff191919),
+                  elevation: 0,
+                  leadingWidth: 70,
+                  title: const Text(
+                    "Uang Modal",
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 28,
+                        fontWeight: FontWeight.w500
+                    ),
                   ),
                 ),
-                elevation: 0,
-                systemOverlayStyle: SystemUiOverlayStyle.dark,
-              ),
               body: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -110,7 +109,7 @@ class _CapitalMoneyPageState extends State<CapitalMoneyPage> {
                     width: columnWidth,
                     decoration: const BoxDecoration(
                         image: DecorationImage(
-                          image: AssetImage('assets/mozaic/logo-baru-set-07.png'),
+                          image: AssetImage('assets/mozaic/logo-baru-set-05.png'),
                           fit: BoxFit.contain,
                         )
                     ),
@@ -132,8 +131,18 @@ class _CapitalMoneyPageState extends State<CapitalMoneyPage> {
                         children: [
                           Card(
                             elevation: 2,
-                            shadowColor: Colors.grey,
+                            shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                             child: Container(
+                              decoration: BoxDecoration(
+                                color: Color.fromRGBO(25, 25, 25, 1.0),
+                                borderRadius: BorderRadius.circular(8),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.15),
+                                    blurRadius: 6,
+                                  )
+                                ],
+                              ),
                               padding: const EdgeInsets.symmetric(
                                   vertical: 10,
                                   horizontal: 10
@@ -200,8 +209,18 @@ class _CapitalMoneyPageState extends State<CapitalMoneyPage> {
                           ),
                           Card(
                             elevation: 2,
-                            shadowColor: Colors.grey,
+                            shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                             child: Container(
+                              decoration: BoxDecoration(
+                                color: Color.fromRGBO(25, 25, 25, 1.0),
+                                borderRadius: BorderRadius.circular(8),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.15),
+                                    blurRadius: 6,
+                                  )
+                                ],
+                              ),
                               padding: const EdgeInsets.symmetric(
                                   vertical: 10,
                                   horizontal: 10
@@ -277,19 +296,22 @@ class _CapitalMoneyPageState extends State<CapitalMoneyPage> {
             );
           },
         ) : Scaffold(
-          backgroundColor: Colors.white,
+          backgroundColor: const Color.fromRGBO(45, 45, 45, 1.0),
           appBar: AppBar(
-            iconTheme: const IconThemeData(color: darkGrey),
-            backgroundColor: yellow,
+            centerTitle: false,
+            titleSpacing: 0,
+            automaticallyImplyLeading: true,
+            backgroundColor: const Color(0xff191919),
+            elevation: 0,
+            leadingWidth: 70,
             title: const Text(
-              'Uang Modal',
+              "Uang Modal",
               style: TextStyle(
-                color: darkGrey,
-                fontSize: 18,
+                  color: Colors.white,
+                  fontSize: 28,
+                  fontWeight: FontWeight.w500
               ),
             ),
-            elevation: 0,
-            systemOverlayStyle: SystemUiOverlayStyle.dark,
           ),
           body: SafeArea(
               bottom: true,
@@ -304,8 +326,18 @@ class _CapitalMoneyPageState extends State<CapitalMoneyPage> {
                           const SizedBox(height: 10),
                           Card(
                             elevation: 2,
-                            shadowColor: Colors.grey,
+                            shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                             child: Container(
+                              decoration: BoxDecoration(
+                                color: Color.fromRGBO(25, 25, 25, 1.0),
+                                borderRadius: BorderRadius.circular(8),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.15),
+                                    blurRadius: 6,
+                                  )
+                                ],
+                              ),
                               padding: const EdgeInsets.symmetric(
                                   vertical: 10,
                                   horizontal: 10
@@ -372,8 +404,18 @@ class _CapitalMoneyPageState extends State<CapitalMoneyPage> {
                           ),
                           Card(
                             elevation: 2,
-                            shadowColor: Colors.grey,
+                            shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                             child: Container(
+                              decoration: BoxDecoration(
+                                color: Color.fromRGBO(25, 25, 25, 1.0),
+                                borderRadius: BorderRadius.circular(8),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.black.withOpacity(0.15),
+                                    blurRadius: 6,
+                                  )
+                                ],
+                              ),
                               padding: const EdgeInsets.symmetric(
                                   vertical: 10,
                                   horizontal: 10

@@ -6,7 +6,6 @@ import 'package:mozaic_app/api/api_endpoint.dart';
 import 'package:mozaic_app/widget/custom_snackbar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../style/app_properties.dart';
 import '../../widget/custom_loading.dart';
 
 class ChangePasswordPage extends StatefulWidget {
@@ -325,7 +324,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
             ),
             backgroundColor: Color.fromRGBO(25, 25, 25, 1.0),
             title: const Text(
-              'Setting Password',
+              'Ganti Password',
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 18
@@ -438,7 +437,7 @@ class _ChangePasswordPageState extends State<ChangePasswordPage> {
                           ),
                           Card(
                             elevation: 2,
-                            shadowColor: Colors.grey,
+                            shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                             child: Container(
                               decoration: BoxDecoration(
                                 color: Color.fromRGBO(25, 25, 25, 1.0),

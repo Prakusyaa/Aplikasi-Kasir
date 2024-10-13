@@ -78,8 +78,8 @@ class _MenuPageState extends State<MenuPage> {
                               Icons.lock,
                               color: Color.fromRGBO(255, 220, 106, 1.0),
                           ),
-                          title: const Text
-                            ('Ganti Password',
+                          title: const Text(
+                              'Ganti Password',
                               style: TextStyle(
                                   color: Colors.white)
                           ),
