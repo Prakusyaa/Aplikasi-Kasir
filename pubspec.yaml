@@ -45,6 +45,7 @@ flutter:
     - assets/
     - assets/icons/
     - assets/mozaic/
+    - assets/alpinjir/
 
   fonts:
   - family: Montserrat
