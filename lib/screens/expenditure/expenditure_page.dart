@@ -140,8 +140,8 @@ class _ExpenditurePageState extends State<ExpenditurePage> {
                                 begin: Alignment.centerLeft,
                                 end: Alignment.centerRight,
                                 colors: [
-                                  yellow,
-                                  Colors.deepOrange,
+                                  Color.fromRGBO(50, 50, 50, 1),
+                                  Colors.black,
                                 ]
                             ),
                           ),
@@ -153,7 +153,7 @@ class _ExpenditurePageState extends State<ExpenditurePage> {
                                 style: const TextStyle(
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18,
-                                    color: Colors.black
+                                    color: Colors.white
                                 ),
                               )
                             ],

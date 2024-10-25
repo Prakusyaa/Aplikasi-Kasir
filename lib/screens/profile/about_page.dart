@@ -43,22 +43,21 @@ class _AboutPageState extends State<AboutPage> {
             double screenWidth = constraints.maxWidth;
             double columnWidth = screenWidth / 2;
             return Scaffold(
-              appBar: AppBar(
-                centerTitle: false,
-                titleSpacing: 0,
-                automaticallyImplyLeading: true,
-                backgroundColor: const Color(0xffFDC054),
-                elevation: 0,
-                leadingWidth: 70,
-                title: const Text(
-                  "Tentang Aplikasi",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 28,
-                      fontWeight: FontWeight.w500
+                backgroundColor: const Color.fromRGBO(45, 45, 45, 1.0),
+                appBar: AppBar(
+                  iconTheme: const IconThemeData(
+                    color: Colors.white,
                   ),
+                  backgroundColor: Color.fromRGBO(25, 25, 25, 1.0),
+                  title: const Text(
+                    'Tentang Aplikasi',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18
+                    ),
+                  ),
+                  elevation: 0,
                 ),
-              ),
               body: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -69,7 +68,7 @@ class _AboutPageState extends State<AboutPage> {
                       child: Column(
                         children: [
                           Image.asset(
-                            'assets/mozaic/logo-baru-set-07.png',
+                            'assets/mozaic/logo-baru-set-05.png',
                             height: 180,
                             width: 180,
                           ),
@@ -84,7 +83,7 @@ class _AboutPageState extends State<AboutPage> {
                                   Text(
                                     'Mozaic Holyville',
                                     style: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         fontSize: 40
                                     ),
                                   ),
@@ -92,7 +91,7 @@ class _AboutPageState extends State<AboutPage> {
                                     'Aplikasi Point of Sale Mozaic powered by Cipta Solutindo Tech',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.white,
                                       fontSize: 20,
                                     ),
                                   ),
@@ -132,7 +131,7 @@ class _AboutPageState extends State<AboutPage> {
                                   const Text(
                                     'Cipta Solutindo Tech',
                                     style: TextStyle(
-                                        color: Colors.black,
+                                        color: Colors.white,
                                         fontSize: 40
                                     ),
                                   ),
@@ -140,7 +139,7 @@ class _AboutPageState extends State<AboutPage> {
                                     'Jl. Solo - Tawangmangu Km 8 Tegal Triyagan - Mojolaban Sukoharjo, Jawa Tengah',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.white,
                                       fontSize: 20,
                                     ),
                                   ),
@@ -153,7 +152,7 @@ class _AboutPageState extends State<AboutPage> {
                                       'www.ciptasolutindo.id',
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
-                                          color: Colors.black,
+                                          color: Colors.white,
                                           fontSize: 20,
                                           decoration: TextDecoration.underline
                                       ),

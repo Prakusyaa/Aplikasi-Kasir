@@ -88,7 +88,7 @@ class _ModalUnitPageState extends State<ModalUnitPage> {
           decoration: const BoxDecoration(
               color: Color.fromRGBO(39, 39, 39, 1.0),
               borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(30), topLeft: Radius.circular(30)
+                  topRight: Radius.circular(10), topLeft: Radius.circular(10)
               )
           ),
           padding: const EdgeInsets.symmetric(
