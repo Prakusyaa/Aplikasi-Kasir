@@ -108,7 +108,7 @@ class _DashboardPageState extends State<DashboardPage> {
             return CustomPaint(
               painter: MainBackground(),
               child: Scaffold(
-                backgroundColor: Colors.transparent,
+                backgroundColor: const Color.fromRGBO(45, 45, 45, 1.0),
                 appBar: AppBar(
                   scrolledUnderElevation: 0,
                   systemOverlayStyle: const SystemUiOverlayStyle(
@@ -137,7 +137,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   title: const Text(
                     'Dashboard',
                     style: TextStyle(
-                        color: darkGrey,
+                        color: Colors.white,
                         fontWeight: FontWeight.w500,
                         fontSize: 28
                     ),
@@ -150,14 +150,7 @@ class _DashboardPageState extends State<DashboardPage> {
                       Container(
                         padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                         decoration: const BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment.centerLeft,
-                              end: Alignment.centerRight,
-                              colors: [
-                                yellow,
-                                Colors.deepOrange,
-                              ]
-                          ),
+                          color: Colors.black26
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -167,7 +160,7 @@ class _DashboardPageState extends State<DashboardPage> {
                               style: const TextStyle(
                                   fontWeight: FontWeight.bold,
                                   fontSize: 18,
-                                  color: Colors.black
+                                  color: Colors.white
                               ),
                             )
                           ],
@@ -189,12 +182,12 @@ class _DashboardPageState extends State<DashboardPage> {
                                         margin: const EdgeInsets.all(16),
                                         elevation: 4,
                                         color: Colors.white,
-                                        surfaceTintColor: Colors.orange,
+                                        surfaceTintColor: Colors.grey,
                                         shadowColor: Colors.grey,
                                         shape: RoundedRectangleBorder(
                                             borderRadius: BorderRadius.circular(10),
                                             side: const BorderSide(
-                                              color: Color(0xffffb259),
+                                              color: Colors.grey,
                                               width: 1,
                                             )
                                         ),
@@ -512,14 +505,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                         width: MediaQuery.of(context).size.width,
                                         decoration: const BoxDecoration(
                                           boxShadow: shadow,
-                                          gradient: LinearGradient(
-                                              begin: Alignment.topRight,
-                                              end: Alignment.bottomLeft,
-                                              colors: [
-                                                Color(0xffF68D7F),
-                                                Color(0xffFCE183),
-                                              ]
-                                          ),
+                                            color: Colors.black26,
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(12)
                                           ),
@@ -529,7 +515,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                           leading: Text(
                                             "Menu Laku",
                                             style: TextStyle(
-                                                color: Colors.black,
+                                                color: Colors.white,
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 16
                                             ),
@@ -553,14 +539,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                         width: MediaQuery.of(context).size.width,
                                         decoration: const BoxDecoration(
                                           boxShadow: shadow,
-                                          gradient: LinearGradient(
-                                            begin: Alignment.topRight,
-                                            end: Alignment.bottomLeft,
-                                            colors: [
-                                              Color(0xffF749A2),
-                                              Color(0xffFF7375),
-                                            ],
-                                          ),
+                                            color: Colors.black26,
                                           borderRadius: BorderRadius.all(
                                               Radius.circular(8)
                                           ),
@@ -570,7 +549,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                           leading: Text(
                                             "Pengeluaran",
                                             style: TextStyle(
-                                                color: Colors.black,
+                                                color: Colors.white,
                                                 fontWeight: FontWeight.bold,
                                                 fontSize: 16
                                             ),
@@ -613,18 +592,19 @@ class _DashboardPageState extends State<DashboardPage> {
                     }
                     printDashboard(context);
                   },
-                  backgroundColor: yellow,
+                  foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+                  backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
                   label: const Text(
                     'Cetak',
                     style: TextStyle(
                         fontSize: 14,
-                        color: Colors.black,
+                        color: Colors.white,
                         fontWeight: FontWeight.bold
                     ),
                   ),
                   icon: const Icon(
                     Icons.print,
-                    color: Colors.black,
+                    color: Colors.white
                   ),
                 ),
               ),

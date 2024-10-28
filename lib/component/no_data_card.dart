@@ -32,7 +32,7 @@ class NoDataCard extends StatelessWidget {
           children: [
             Icon(
               Icons.no_food,
-              color: Color.fromRGBO(60, 60, 60, 1),
+              color: Colors.white,
             ),
             SizedBox(width: 10),
             Text(
