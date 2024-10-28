@@ -1,4 +1,3 @@
-import 'package:mozaic_app/style/app_properties.dart';
 import 'package:flutter/material.dart';
 import 'package:mozaic_app/style/custom_background.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -173,7 +172,7 @@ class _AboutPageState extends State<AboutPage> {
         ) : CustomPaint(
           painter: MainBackground(),
           child: Material(
-            color: Colors.transparent,
+            color: Color.fromRGBO(44, 44, 44, 1.0),
             child: SafeArea(
               child: Container(
                   margin: const EdgeInsets.only(top: kToolbarHeight),
@@ -186,12 +185,12 @@ class _AboutPageState extends State<AboutPage> {
                             Text(
                               'Tentang Aplikasi',
                               style: TextStyle(
-                                color: darkGrey,
+                                color: Colors.white,
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            CloseButton()
+                            CloseButton(color: Colors.white)
                           ],
                         ),
                         const SizedBox(height: 20),
@@ -201,10 +200,10 @@ class _AboutPageState extends State<AboutPage> {
                               Container(
                                 margin: const EdgeInsets.symmetric(vertical: 4),
                                 decoration: BoxDecoration(
-                                    color: Colors.white,
+                                    color: Color.fromRGBO(30, 30, 30, 1.0),
                                     boxShadow: [
                                       BoxShadow(
-                                        color: Colors.grey.withOpacity(0.5),
+                                        color: Colors.black.withOpacity(0.5),
                                         spreadRadius: 3,
                                         blurRadius: 10,
                                         offset: const Offset(0, 3), // changes position of shadow
@@ -261,6 +260,7 @@ class _AboutPageState extends State<AboutPage> {
                                                       child: Text(
                                                           'Aplikasi Mozaic',
                                                           style: TextStyle(
+                                                            color: Colors.white,
                                                               fontWeight: FontWeight.bold,
                                                               fontSize: 18
                                                           )
@@ -271,7 +271,9 @@ class _AboutPageState extends State<AboutPage> {
                                                         'Aplikasi point of sale untuk merekap data penjualan dan pembelian',
                                                         textAlign: TextAlign.center,
                                                         style: TextStyle(
-                                                            color: Colors.grey,
+                                                            color: Color.fromRGBO(
+                                                                166, 166, 166,
+                                                                1.0),
                                                             fontSize: 12
                                                         )
                                                     )
@@ -287,7 +289,8 @@ class _AboutPageState extends State<AboutPage> {
                                       child: Container(
                                           padding: const EdgeInsets.all(14),
                                           decoration: const BoxDecoration(
-                                              color: yellow,
+                                              color: Color.fromRGBO(
+                                                  51, 51, 51, 1.0),
                                               borderRadius: BorderRadius.only(
                                                   bottomRight: Radius.circular(5),
                                                   bottomLeft: Radius.circular(5)
@@ -313,10 +316,10 @@ class _AboutPageState extends State<AboutPage> {
                               Container(
                                 margin: const EdgeInsets.symmetric(vertical: 8),
                                 decoration: BoxDecoration(
-                                    color: Colors.white,
+                                    color: Color.fromRGBO(30, 30, 30, 1.0),
                                     boxShadow: [
                                       BoxShadow(
-                                        color: Colors.grey.withOpacity(0.5),
+                                        color: Colors.black.withOpacity(0.5),
                                         spreadRadius: 3,
                                         blurRadius: 10,
                                         offset: const Offset(0, 3), // changes position of shadow
@@ -373,6 +376,7 @@ class _AboutPageState extends State<AboutPage> {
                                                       child: Text(
                                                           'Cipta Solutindo Tech',
                                                           style: TextStyle(
+                                                            color: Colors.white,
                                                               fontWeight: FontWeight.bold,
                                                               fontSize: 18
                                                           )
@@ -416,7 +420,8 @@ class _AboutPageState extends State<AboutPage> {
                                       child: Container(
                                           padding: const EdgeInsets.all(14),
                                           decoration: const BoxDecoration(
-                                              color: yellow,
+                                              color: Color.fromRGBO(
+                                                  51, 51, 51, 1.0),
                                               borderRadius: BorderRadius.only(
                                                   bottomRight: Radius.circular(5),
                                                   bottomLeft: Radius.circular(5)
