@@ -66,9 +66,9 @@ class _ExpenditureFormPageTabletState extends State<ExpenditureFormPageTablet> {
         expenditureValidation(context);
       },
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepOrange,
-        foregroundColor: Colors.white,
-        shadowColor: Colors.orangeAccent,
+        foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+        backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
+        shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
         elevation: 3,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)),
@@ -86,9 +86,9 @@ class _ExpenditureFormPageTabletState extends State<ExpenditureFormPageTablet> {
         return Container(
           width: MediaQuery.of(context).size.width,
           decoration: const BoxDecoration(
-              color: Color.fromRGBO(255, 255, 255, 0.9),
+              color: Color.fromRGBO(39, 39, 39, 1.0),
               borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(30), topLeft: Radius.circular(30)
+                  topRight: Radius.circular(10), topLeft: Radius.circular(10)
               )
           ),
           padding: const EdgeInsets.symmetric(
@@ -105,6 +105,7 @@ class _ExpenditureFormPageTabletState extends State<ExpenditureFormPageTablet> {
                 width: double.infinity,
                 child: SvgPicture.asset(
                   'assets/icons/divider-icon.svg',
+                  color: Colors.black26,
                   height: 4,
                   width: 50,
                 ),
@@ -113,7 +114,7 @@ class _ExpenditureFormPageTabletState extends State<ExpenditureFormPageTablet> {
                 child: Text(
                   "Pengeluaran",
                   style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontSize: 18,
                       fontWeight: FontWeight.bold
                   ),
@@ -137,8 +138,9 @@ class _ExpenditureFormPageTabletState extends State<ExpenditureFormPageTablet> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Card(
+                                  color: Color.fromRGBO(30, 30, 30, 1.0),
                                   elevation: 2,
-                                  shadowColor: Colors.grey,
+                                  shadowColor: Color.fromRGBO(20, 20, 20, 1.0),
                                   child: Container(
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 10,
@@ -150,6 +152,7 @@ class _ExpenditureFormPageTabletState extends State<ExpenditureFormPageTablet> {
                                         const Text(
                                           'Pilih Jenis Pengeluaran',
                                           style: TextStyle(
+                                            color: Colors.white,
                                               fontSize: 14,
                                               fontWeight: FontWeight.bold
                                           ),
@@ -202,8 +205,9 @@ class _ExpenditureFormPageTabletState extends State<ExpenditureFormPageTablet> {
                                 ),
                                 const SizedBox(height: 4),
                                 Card(
+                                  color: Color.fromRGBO(30, 30, 30, 1.0),
                                   elevation: 2,
-                                  shadowColor: Colors.grey,
+                                  shadowColor: Color.fromRGBO(20, 20, 20, 1.0),
                                   child: Container(
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 10,
@@ -215,6 +219,7 @@ class _ExpenditureFormPageTabletState extends State<ExpenditureFormPageTablet> {
                                         const Text(
                                           'Keterangan',
                                           style: TextStyle(
+                                            color: Colors.white,
                                               fontSize: 14,
                                               fontWeight: FontWeight.bold
                                           ),
@@ -270,8 +275,9 @@ class _ExpenditureFormPageTabletState extends State<ExpenditureFormPageTablet> {
                                 ),
                                 const SizedBox(height: 4),
                                 Card(
+                                  color: Color.fromRGBO(30, 30, 30, 1.0),
                                   elevation: 2,
-                                  shadowColor: Colors.grey,
+                                  shadowColor: Color.fromRGBO(20, 20, 20, 1.0),
                                   child: Container(
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 10,
@@ -283,6 +289,7 @@ class _ExpenditureFormPageTabletState extends State<ExpenditureFormPageTablet> {
                                         const Text(
                                           'Jumlah',
                                           style: TextStyle(
+                                            color: Colors.white,
                                               fontSize: 14,
                                               fontWeight: FontWeight.bold
                                           ),

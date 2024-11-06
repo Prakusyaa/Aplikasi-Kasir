@@ -613,7 +613,7 @@ class _DashboardPageState extends State<DashboardPage> {
         ) : CustomPaint(
           painter: MainBackground(),
           child: Scaffold(
-            backgroundColor: Colors.transparent,
+            backgroundColor: const Color.fromRGBO(45, 45, 45, 1.0),
             appBar: AppBar(
               automaticallyImplyLeading: false,
               scrolledUnderElevation: 0,
@@ -641,7 +641,7 @@ class _DashboardPageState extends State<DashboardPage> {
               title: const Text(
                 'Dashboard',
                 style: TextStyle(
-                    color: darkGrey,
+                    color: Colors.white,
                     fontWeight: FontWeight.w500,
                     fontSize: 18
                 ),
@@ -655,14 +655,7 @@ class _DashboardPageState extends State<DashboardPage> {
                     padding: const EdgeInsets.symmetric(horizontal: 32),
                     height: 48,
                     decoration: const BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: Alignment.centerLeft,
-                          end: Alignment.centerRight,
-                          colors: [
-                            yellow,
-                            Colors.deepOrange,
-                          ]
-                      ),
+                        color: Colors.black26
                     ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -672,7 +665,7 @@ class _DashboardPageState extends State<DashboardPage> {
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 14,
-                            color: Colors.black,
+                            color: Colors.white,
                           ),
                         )
                       ],
@@ -694,12 +687,12 @@ class _DashboardPageState extends State<DashboardPage> {
                                 margin: const EdgeInsets.all(16),
                                 elevation: 4,
                                 color: Colors.white,
-                                surfaceTintColor: Colors.orange,
+                                surfaceTintColor: Colors.grey,
                                 shadowColor: Colors.grey,
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(10),
                                     side: const BorderSide(
-                                      color: Color(0xffffb259),
+                                      color: Colors.grey,
                                       width: 1,
                                     )
                                 ),
@@ -981,12 +974,12 @@ class _DashboardPageState extends State<DashboardPage> {
                                 margin: const EdgeInsets.symmetric(
                                     horizontal: 10
                                 ),
-                                surfaceTintColor: const Color(0xffF68D7F),
+                                surfaceTintColor: Colors.grey,
                                 color: Colors.white,
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(12),
                                     side: const BorderSide(
-                                      color: Color(0xffF68D7F),
+                                      color: Colors.grey,
                                       width: 1,
                                     )
                                 ),
@@ -1001,11 +994,12 @@ class _DashboardPageState extends State<DashboardPage> {
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(12),
                                       side: const BorderSide(
-                                        color: Color(0xffF68D7F),
+                                        color: Colors.grey,
                                         width: 1,
                                       )
                                   ),
                                   leading: const Icon(
+                                    color: Colors.black,
                                       Icons.fastfood
                                   ),
                                   title: const Text(
@@ -1034,12 +1028,12 @@ class _DashboardPageState extends State<DashboardPage> {
                                 margin: const EdgeInsets.symmetric(
                                     horizontal: 10
                                 ),
-                                surfaceTintColor: const Color(0xffF749A2),
+                                surfaceTintColor: Colors.grey,
                                 color: Colors.white,
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(12),
                                     side: const BorderSide(
-                                      color: Color(0xffF749A2),
+                                      color: Colors.grey,
                                       width: 1,
                                     )
                                 ),
@@ -1054,11 +1048,12 @@ class _DashboardPageState extends State<DashboardPage> {
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(12),
                                       side: const BorderSide(
-                                        color: Color(0xffF749A2),
+                                        color: Colors.grey,
                                         width: 1,
                                       )
                                   ),
                                   leading: const Icon(
+                                    color: Colors.black,
                                       Icons.outbond
                                   ),
                                   title: const Text(
@@ -1106,18 +1101,19 @@ class _DashboardPageState extends State<DashboardPage> {
                 }
                 printDashboard(context);
               },
-              backgroundColor: yellow,
+              foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+              backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
               label: const Text(
                 'Cetak',
                 style: TextStyle(
                     fontSize: 14,
-                    color: Colors.black,
+                    color: Colors.white,
                     fontWeight: FontWeight.bold
                 ),
               ),
               icon: const Icon(
                 Icons.print,
-                color: Colors.black,
+                color: Colors.white,
               ),
             ),
           ),

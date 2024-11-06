@@ -143,7 +143,7 @@ class _MainPageState extends State<MainPage> {
         IconButton(
             onPressed: () => Navigator.of(context).push(CupertinoPageRoute(builder: (_) => const AboutPage())),
             icon: Image.asset(
-              "assets/mozaic/logo-baru-set-07.png",
+              "assets/mozaic/logo-baru-set-05.png",
               fit: BoxFit.contain,
               height: 80,
               width: 80,
@@ -153,7 +153,7 @@ class _MainPageState extends State<MainPage> {
     );
 
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: const Color.fromRGBO(45, 45, 45, 1.0),
       body: CustomPaint(
           painter: MainBackground(),
           child: OrientationBuilder(
@@ -171,7 +171,7 @@ class _MainPageState extends State<MainPage> {
                             Expanded(
                               child: VerticalDivider(
                                 width: 1,
-                                color: Colors.grey.withOpacity(0.4),
+                                color: Colors.white.withOpacity(0.4),
                               ),
                             ),
                             // Middle Column
@@ -193,7 +193,7 @@ class _MainPageState extends State<MainPage> {
                                         child: Text(
                                           "Penjualan Harian",
                                           style: TextStyle(
-                                              color: Colors.black,
+                                              color: Colors.white,
                                               fontSize: 20,
                                               fontWeight: FontWeight.bold
                                           ),
@@ -218,7 +218,7 @@ class _MainPageState extends State<MainPage> {
                             Expanded(
                               child: VerticalDivider(
                                 width: 1,
-                                color: Colors.grey.withOpacity(0.4),
+                                color: Colors.white.withOpacity(0.4),
                               ),
                             ),
                             // Right Column
@@ -240,7 +240,7 @@ class _MainPageState extends State<MainPage> {
                                         child: Text(
                                           "Menu Laku Harian",
                                           style: TextStyle(
-                                              color: Colors.black,
+                                              color: Colors.white,
                                               fontSize: 20,
                                               fontWeight: FontWeight.bold
                                           ),
@@ -288,12 +288,12 @@ class _MainPageState extends State<MainPage> {
                                         horizontal: 10
                                     ),
                                     elevation: 4,
-                                    surfaceTintColor: const Color(0xff33B2B9),
+                                    surfaceTintColor: Colors.black26,
                                     color: Colors.white,
                                     shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(12),
                                         side: const BorderSide(
-                                          color: Color(0xff33B2B9),
+                                          color: Colors.black26,
                                           width: 1,
                                         )
                                     ),
@@ -307,7 +307,7 @@ class _MainPageState extends State<MainPage> {
                                       shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(12),
                                           side: const BorderSide(
-                                            color: Color(0xff33B2B9),
+                                            color: Colors.black26,
                                             width: 1,
                                           )
                                       ),
@@ -315,6 +315,7 @@ class _MainPageState extends State<MainPage> {
                                       title: const Text(
                                         "Penjualan Harian",
                                         style: TextStyle(
+                                          color: Colors.black,
                                             fontSize: 16,
                                             fontWeight: FontWeight.bold
                                         ),
@@ -346,12 +347,12 @@ class _MainPageState extends State<MainPage> {
                                         horizontal: 10
                                     ),
                                     elevation: 4,
-                                    surfaceTintColor: const Color(0xff5189EA),
+                                    surfaceTintColor: Colors.black26,
                                     color: Colors.white,
                                     shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(12),
                                         side: const BorderSide(
-                                          color: Color(0xff5189EA),
+                                          color: Colors.black26,
                                           width: 1,
                                         )
                                     ),
@@ -365,7 +366,7 @@ class _MainPageState extends State<MainPage> {
                                       shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(12),
                                           side: const BorderSide(
-                                            color: Color(0xff5189EA),
+                                            color: Colors.black26,
                                             width: 1,
                                           )
                                       ),
@@ -373,6 +374,7 @@ class _MainPageState extends State<MainPage> {
                                       title: const Text(
                                         "Menu Laku Harian",
                                         style: TextStyle(
+                                          color: Colors.black,
                                             fontSize: 16,
                                             fontWeight: FontWeight.bold
                                         ),
@@ -446,14 +448,15 @@ class _MainPageState extends State<MainPage> {
           'Tambah Pesanan',
           style: TextStyle(
               fontSize: 14,
-              color: Colors.black,
+              color: Colors.white,
               fontWeight: FontWeight.bold
           ),
         ),
-        backgroundColor: yellow,
+        foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+        backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
         icon: const Icon(
           Icons.add,
-          color: Colors.black,
+          color: Colors.white,
         ),
       ),
     );
@@ -535,7 +538,7 @@ class _MainPageState extends State<MainPage> {
                 width: 40,
                 height: 40,
                 child: Center(
-                  child: Icon(Icons.payments_sharp, color: Colors.grey.shade600),
+                  child: Icon(Icons.payments_sharp, color: Colors.white),
                 ),
               ),
             ),
@@ -558,7 +561,7 @@ class _MainPageState extends State<MainPage> {
                 width: 40,
                 height: 40,
                 child: Center(
-                  child: Icon(Icons.print, color: Colors.grey.shade600),
+                  child: Icon(Icons.print, color: Colors.white),
                 ),
               ),
             ),
@@ -584,7 +587,7 @@ class _MainPageState extends State<MainPage> {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
             side: const BorderSide(
-              color: Color(0xff33B2B9),
+              color: Colors.black26,
               width: 1,
             )
         ),
@@ -652,7 +655,7 @@ class _MainPageState extends State<MainPage> {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
             side: const BorderSide(
-              color: Color(0xff5189EA),
+              color: Colors.black26,
               width: 1,
             )
         ),
@@ -663,7 +666,7 @@ class _MainPageState extends State<MainPage> {
             border: Border(
               right: BorderSide(
                   width: 1,
-                  color: Color(0xff5189EA)
+                color: Colors.black26,
               ),
             ),
           ),
@@ -671,7 +674,7 @@ class _MainPageState extends State<MainPage> {
               width: 40,
               height: 40,
               decoration: BoxDecoration(
-                color: const Color(0xff5189EA).withOpacity(0.7),
+                color: Colors.black26,
                 borderRadius: const BorderRadius.all(Radius.circular(4)),
               ),
               child: Center(

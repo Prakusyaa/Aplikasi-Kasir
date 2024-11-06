@@ -92,7 +92,7 @@ class _ExpenditurePageState extends State<ExpenditurePage> {
             return CustomPaint(
               painter: MainBackground(),
               child: Scaffold(
-                  backgroundColor: Colors.transparent,
+                  backgroundColor: const Color.fromRGBO(45, 45, 45, 1.0),
                   appBar: AppBar(
                     systemOverlayStyle: const SystemUiOverlayStyle(
                       statusBarColor: Colors.transparent,
@@ -123,7 +123,7 @@ class _ExpenditurePageState extends State<ExpenditurePage> {
                     title: const Text(
                       'Pengeluaran',
                       style: TextStyle(
-                          color: darkGrey,
+                          color: Colors.white,
                           fontWeight: FontWeight.w500,
                           fontSize: 28
                       ),
@@ -136,14 +136,7 @@ class _ExpenditurePageState extends State<ExpenditurePage> {
                         Container(
                           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                           decoration: const BoxDecoration(
-                            gradient: LinearGradient(
-                                begin: Alignment.centerLeft,
-                                end: Alignment.centerRight,
-                                colors: [
-                                  Color.fromRGBO(50, 50, 50, 1),
-                                  Colors.black,
-                                ]
-                            ),
+                            color: Colors.black26
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -192,7 +185,7 @@ class _ExpenditurePageState extends State<ExpenditurePage> {
                                       leading: const Text(
                                         "Pengeluaran",
                                         style: TextStyle(
-                                            color: Colors.black,
+                                            color: Colors.white,
                                             fontWeight: FontWeight.bold,
                                             fontSize: 26
                                         ),
@@ -200,7 +193,7 @@ class _ExpenditurePageState extends State<ExpenditurePage> {
                                       trailing: Text(
                                         expenditureTotal.toString() != '' ? CurrencyFormat.convertToIdr(expenditureTotal, 0) : "Jumlah Total",
                                         style: const TextStyle(
-                                            color: Colors.black,
+                                            color: Colors.white,
                                             fontSize: 26,
                                             fontWeight: FontWeight.bold
                                         ),
@@ -225,18 +218,19 @@ class _ExpenditurePageState extends State<ExpenditurePage> {
                         builder: (context) => const ExpenditureFormPageTablet(),
                       ).then((value) => rebuild());
                     },
-                    backgroundColor: yellow,
+                    foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+                    backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
                     label: const Text(
                       'Tambah Pengeluaran',
                       style: TextStyle(
                           fontSize: 14,
-                          color: Colors.black,
+                          color: Colors.white,
                           fontWeight: FontWeight.bold
                       ),
                     ),
                     icon: const Icon(
                       Icons.add,
-                      color: Colors.black,
+                      color: Colors.white,
                     ),
                   )
               ),
@@ -245,7 +239,7 @@ class _ExpenditurePageState extends State<ExpenditurePage> {
         ) : CustomPaint(
           painter: MainBackground(),
           child: Scaffold(
-              backgroundColor: Colors.transparent,
+              backgroundColor: const Color.fromRGBO(45, 45, 45, 1.0),
               appBar: AppBar(
                 automaticallyImplyLeading: false,
                 scrolledUnderElevation: 0,
@@ -275,7 +269,7 @@ class _ExpenditurePageState extends State<ExpenditurePage> {
                 backgroundColor: Colors.transparent,
                 title: const Text(
                   'Pengeluaran',
-                  style: TextStyle(color: darkGrey, fontSize: 18),
+                  style: TextStyle(color: Colors.white, fontSize: 18),
                 ),
               ),
               body: LayoutBuilder(
@@ -297,14 +291,7 @@ class _ExpenditurePageState extends State<ExpenditurePage> {
                               padding: const EdgeInsets.symmetric(horizontal: 32),
                               height: 48,
                               decoration: const BoxDecoration(
-                                gradient: LinearGradient(
-                                    begin: Alignment.centerLeft,
-                                    end: Alignment.centerRight,
-                                    colors: [
-                                      yellow,
-                                      Colors.deepOrange,
-                                    ]
-                                ),
+                                color: Colors.black26
                               ),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -314,7 +301,7 @@ class _ExpenditurePageState extends State<ExpenditurePage> {
                                     style: const TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 14,
-                                      color: Colors.black,
+                                      color: Colors.white,
                                     ),
                                   )
                                 ],
@@ -325,12 +312,12 @@ class _ExpenditurePageState extends State<ExpenditurePage> {
                               margin: const EdgeInsets.symmetric(
                                   horizontal: 10
                               ),
-                              surfaceTintColor: const Color(0xffff76be),
+                              surfaceTintColor: Colors.grey,
                               color: Colors.white,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(12),
                                   side: const BorderSide(
-                                    color: Color(0xffff76be),
+                                    color: Colors.grey,
                                     width: 1,
                                   )
                               ),
@@ -345,11 +332,11 @@ class _ExpenditurePageState extends State<ExpenditurePage> {
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(12),
                                     side: const BorderSide(
-                                      color: Color(0xffff76be),
+                                      color: Colors.grey,
                                       width: 1,
                                     )
                                 ),
-                                leading: const Icon(Icons.outbond),
+                                leading: const Icon( color: Colors.black, Icons.outbond),
                                 title: const Text(
                                   "Pengeluaran",
                                   style: TextStyle(
@@ -398,18 +385,19 @@ class _ExpenditurePageState extends State<ExpenditurePage> {
                     builder: (context) => const ExpenditureFormPageTablet(),
                   ).then((value) => rebuild());
                 },
-                backgroundColor: yellow,
+                foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+                backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
                 label: const Text(
                   'Tambah Pengeluaran',
                   style: TextStyle(
                       fontSize: 14,
-                      color: Colors.black,
+                      color: Colors.white,
                       fontWeight: FontWeight.bold
                   ),
                 ),
                 icon: const Icon(
                   Icons.add,
-                  color: Colors.black,
+                  color: Colors.white,
                 ),
               )
           ),

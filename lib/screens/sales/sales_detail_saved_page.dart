@@ -262,7 +262,9 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          CloseButton()
+                          CloseButton(
+                            color: Colors.white,
+                          )
                         ],
                       ),
                     ),

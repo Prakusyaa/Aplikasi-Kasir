@@ -10,9 +10,9 @@ class MainBackground extends CustomPainter {
     double height = size.height;
     double width = size.width;
     canvas.drawRect(
-        Rect.fromLTRB(0, 0, width, height), Paint()..color = Colors.white);
+        Rect.fromLTRB(0, 0, width, height), Paint()..color = Color.fromRGBO(45, 45, 45, 1.0));
     canvas.drawRect(Rect.fromLTRB(width - (width / 3), 0, width, height),
-        Paint()..color = transparentYellow);
+        Paint()..color = Color.fromRGBO(45, 45, 45, 1));
   }
 
   @override

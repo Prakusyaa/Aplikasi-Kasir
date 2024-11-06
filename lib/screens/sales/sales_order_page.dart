@@ -117,8 +117,8 @@ class _SalesOrderPageState extends State<SalesOrderPage> {
         unselectedLabelStyle: const TextStyle(
           fontSize: 12,
         ),
-        labelColor: darkGrey,
-        unselectedLabelColor: const Color.fromRGBO(0, 0, 0, 0.5),
+        labelColor: Colors.white,
+        unselectedLabelColor: Colors.white,
         isScrollable: true,
       );
     }
@@ -132,7 +132,7 @@ class _SalesOrderPageState extends State<SalesOrderPage> {
                 builder: (context, constraints) {
                   return ScrollbarTheme(
                     data: ScrollbarThemeData(
-                      thumbColor: WidgetStateProperty.all(Colors.orange),
+                      thumbColor: WidgetStateProperty.all(Colors.white),
                       thickness: WidgetStateProperty.all(10),
                       radius: const Radius.circular(20),
                       trackColor: WidgetStateProperty.all(Colors.grey[200]),
@@ -160,7 +160,7 @@ class _SalesOrderPageState extends State<SalesOrderPage> {
                 },
               ) : ScrollbarTheme(
                 data: ScrollbarThemeData(
-                  thumbColor: WidgetStateProperty.all(Colors.orange),
+                  thumbColor: WidgetStateProperty.all(Colors.white),
                   thickness: WidgetStateProperty.all(10),
                   radius: const Radius.circular(20),
                   trackColor: WidgetStateProperty.all(Colors.grey[200]),
@@ -223,9 +223,9 @@ class _SalesOrderPageState extends State<SalesOrderPage> {
         ),
       ),
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepOrange,
-        foregroundColor: Colors.white,
-        shadowColor: Colors.orangeAccent,
+        foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+        backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
+        shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
         elevation: 3,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)),
@@ -255,9 +255,9 @@ class _SalesOrderPageState extends State<SalesOrderPage> {
         ),
       ),
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepOrange,
-        foregroundColor: Colors.white,
-        shadowColor: Colors.orangeAccent,
+        foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+        backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
+        shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
         elevation: 3,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)),
@@ -298,12 +298,13 @@ class _SalesOrderPageState extends State<SalesOrderPage> {
                                     const Text(
                                       'Buat Pesanan',
                                       style: TextStyle(
-                                        color: darkGrey,
+                                        color: Colors.white,
                                         fontSize: 24,
                                         fontWeight: FontWeight.bold,
                                       ),
                                     ),
                                     CloseButton(
+                                      color: Colors.white,
                                       onPressed: () async {
                                         Navigator.of(context).pushAndRemoveUntil(
                                           CupertinoPageRoute(
@@ -316,12 +317,12 @@ class _SalesOrderPageState extends State<SalesOrderPage> {
                                       },
                                     )
                                   ],
+                                  ),
                                 ),
-                              ),
-                              const SizedBox(height: 10),
-                              Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 50),
-                                child: Container(
+                                const SizedBox(height: 10),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 50),
+                                  child: Container(
                                   padding: const EdgeInsets.only(left: 32),
                                   decoration: BoxDecoration(
                                     boxShadow: [
@@ -434,12 +435,13 @@ class _SalesOrderPageState extends State<SalesOrderPage> {
                                 const Text(
                                   'Buat Pesanan',
                                   style: TextStyle(
-                                    color: darkGrey,
+                                    color: Colors.white,
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 ),
                                 CloseButton(
+                                  color: Colors.white,
                                   onPressed: () async {
                                     // Navigator.pop(context);
                                     // final prefs = await SharedPreferences.getInstance();
@@ -462,8 +464,9 @@ class _SalesOrderPageState extends State<SalesOrderPage> {
                             margin: const EdgeInsets.symmetric(
                                 horizontal: 25
                             ),
+                            color: Color.fromRGBO(30, 30, 30, 1.0),
                             elevation: 2,
-                            shadowColor: Colors.grey,
+                            shadowColor: Color.fromRGBO(20, 20, 20, 1.0),
                             child: Container(
                               padding: const EdgeInsets.symmetric(
                                   vertical: 10,
@@ -475,6 +478,7 @@ class _SalesOrderPageState extends State<SalesOrderPage> {
                                   const Text(
                                     'Pencarian',
                                     style: TextStyle(
+                                      color: Colors.white,
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold
                                     ),
@@ -574,14 +578,7 @@ class _SalesOrderPageState extends State<SalesOrderPage> {
       child: Container(
         decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(10)),
-            gradient: LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              colors: [
-                Color(0xffFCE183),
-                Color(0xffF68D7F),
-              ],
-            ),
+            color: Colors.black26,
             boxShadow: shadow
         ),
         child: ListTile(
@@ -748,14 +745,7 @@ class _SalesOrderPageState extends State<SalesOrderPage> {
       ),
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
-          gradient: LinearGradient(
-            begin: Alignment.topRight,
-            end: Alignment.bottomLeft,
-            colors: [
-              Color(0xffFCE183),
-              Color(0xffF68D7F),
-            ],
-          ),
+          color: Colors.black26,
           boxShadow: shadow
       ),
       child: ListTile(
@@ -779,7 +769,7 @@ class _SalesOrderPageState extends State<SalesOrderPage> {
                   itemJson[index]['item_name'][0].toUpperCase() +
                       itemJson[index]['item_name'][0].toLowerCase(),
                   style: const TextStyle(
-                      color: Color(0xffF68D7F),
+                      color: Colors.black,
                       fontWeight: FontWeight.bold,
                       fontSize: 18
                   ),
@@ -792,14 +782,14 @@ class _SalesOrderPageState extends State<SalesOrderPage> {
             style: const TextStyle(
               fontSize: 18,
               fontWeight: FontWeight.bold,
-              color: Colors.black,
+              color: Colors.white,
             ),
           ),
           subtitle: Text(
               CurrencyFormat.convertToIdr(int.parse
                 (itemJson[index]['item_unit_price']), 0),
               style: const TextStyle(
-                  color: Colors.black,
+                  color: Colors.white,
                   fontSize: 16
               )
           ),
@@ -835,7 +825,7 @@ class _SalesOrderPageState extends State<SalesOrderPage> {
                             itemJson[index]['item_unit_price']);
                       },
                       child: const Icon(Icons.remove_rounded,
-                          size: 26, color: Color(0xffF68D7F)
+                          size: 26, color: Colors.black
                       )
                   ),
                 ),
@@ -904,7 +894,7 @@ class _SalesOrderPageState extends State<SalesOrderPage> {
                           borderRadius: BorderRadius.all(Radius.circular(10)),
                         ),
                         child: const Icon(Icons.add_rounded,
-                            size: 26, color: Color(0xffF68D7F)
+                            size: 26, color: Colors.black
                         )
                     )
                 ),
@@ -1113,7 +1103,7 @@ class _SalesOrderPageState extends State<SalesOrderPage> {
 
   addDescriptionWindow(context, var itemId) {
     AlertDialog alert = AlertDialog(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black12,
       content: SizedBox(
         height: 60,
         width: 400,
@@ -1130,10 +1120,10 @@ class _SalesOrderPageState extends State<SalesOrderPage> {
               },
               decoration: InputDecoration(
                 labelText: "Catatan",
-                labelStyle: const TextStyle(color: Colors.black),
+                labelStyle: const TextStyle(color: Colors.white),
                 border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(color: Color.fromARGB(255, 235, 147, 17)),
+                  borderSide: const BorderSide(color: Colors.black26),
                   borderRadius: BorderRadius.circular(8),
                 ),
               ),
