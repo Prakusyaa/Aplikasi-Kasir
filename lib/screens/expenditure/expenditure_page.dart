@@ -420,7 +420,7 @@ class _ExpenditurePageState extends State<ExpenditurePage> {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
             side: const BorderSide(
-              color: Color(0xffff76be),
+              color: Colors.grey,
               width: 1,
             )
         ),
@@ -495,7 +495,7 @@ class _ExpenditurePageState extends State<ExpenditurePage> {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
             side: const BorderSide(
-              color: Color(0xffff76be),
+              color: Colors.grey,
               width: 1,
             )
         ),

@@ -1513,14 +1513,8 @@ class _SalesDetailPageState extends State<SalesDetailPage> {
         children: [
           Container(
             decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [
-                    Color(0xffF68D7F),
-                    Color(0xffFCE183),
-                  ],
-                ),
+                borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                color: Color.fromRGBO(30, 30, 30, 1.0),
                 boxShadow: shadow
             ),
             child: Column(
@@ -1550,7 +1544,7 @@ class _SalesDetailPageState extends State<SalesDetailPage> {
                                       cartItemsJson[index]['item_name'][0]
                                           .toLowerCase(),
                                   style: const TextStyle(
-                                      color: Color(0xffF68D7F),
+                                      color: Color(0xff000000),
                                       fontSize: 16,
                                       fontWeight: FontWeight.bold
                                   ),
@@ -1561,7 +1555,7 @@ class _SalesDetailPageState extends State<SalesDetailPage> {
                     title: Text(
                       cartItemsJson[index]['item_name'],
                       style: const TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontSize: 18
                       ),
                     ),
@@ -1571,7 +1565,7 @@ class _SalesDetailPageState extends State<SalesDetailPage> {
                                 amountMap['amount_${cartItemsJson[index]['item_id']}'],
                             0),
                         style: const TextStyle(
-                            color: Colors.black,
+                            color: Colors.white,
                             fontSize: 16
                         )
                     ),
@@ -1611,6 +1605,7 @@ class _SalesDetailPageState extends State<SalesDetailPage> {
             height: 80,
             width: double.infinity,
             decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(8.0)),
                 gradient: LinearGradient(
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
@@ -1648,14 +1643,8 @@ class _SalesDetailPageState extends State<SalesDetailPage> {
         children: [
           Container(
             decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topRight,
-                  end: Alignment.bottomLeft,
-                  colors: [
-                    Color(0xffF68D7F),
-                    Color(0xffFCE183),
-                  ],
-                ),
+                borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                color: Color.fromRGBO(30, 30, 30, 1.0),
                 boxShadow: shadow
             ),
             child: Column(
@@ -1685,7 +1674,7 @@ class _SalesDetailPageState extends State<SalesDetailPage> {
                                       cartItemsJson[index]['item_name'][0]
                                           .toLowerCase(),
                                   style: const TextStyle(
-                                      color: Color(0xffF68D7F),
+                                      color: Color(0xff000000),
                                       fontSize: 22,
                                       fontWeight: FontWeight.bold
                                   ),
@@ -1696,7 +1685,7 @@ class _SalesDetailPageState extends State<SalesDetailPage> {
                     title: Text(
                       cartItemsJson[index]['item_name'],
                       style: const TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                           fontSize: 18
                       ),
                     ),
@@ -1706,7 +1695,7 @@ class _SalesDetailPageState extends State<SalesDetailPage> {
                                 amountMap['amount_${cartItemsJson[index]['item_id']}'],
                             0),
                         style: const TextStyle(
-                            color: Colors.black,
+                            color: Colors.white,
                             fontSize: 16
                         )
                     ),
@@ -1740,7 +1729,7 @@ class _SalesDetailPageState extends State<SalesDetailPage> {
                                   .toString()
                                   : "0",
                               style: const TextStyle(
-                                  color: Color(0xffF68D7F),
+                                  color: Color(0xff000000),
                                   fontSize: 22
                               ),
                             ),
@@ -1756,6 +1745,7 @@ class _SalesDetailPageState extends State<SalesDetailPage> {
             height: 100,
             width: double.infinity,
             decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(8.0)),
                 gradient: LinearGradient(
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,

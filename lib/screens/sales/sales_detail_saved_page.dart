@@ -199,9 +199,9 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
         ),
       ),
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepOrange,
-        foregroundColor: Colors.white,
-        shadowColor: Colors.orangeAccent,
+        foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+        backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
+        shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
         elevation: 3,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)),
@@ -228,9 +228,9 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
         ),
       ),
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.deepOrange,
-        foregroundColor: Colors.white,
-        shadowColor: Colors.orangeAccent,
+        foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+        backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
+        shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
         elevation: 3,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)),
@@ -244,7 +244,7 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
             double screenWidth = constraints.maxWidth;
             double columnWidth = screenWidth / 2;
             return Scaffold(
-              backgroundColor: Colors.white,
+              backgroundColor: const Color.fromRGBO(45, 45, 45, 1.0),
               body: SafeArea(
                 child: Column(
                   children: [
@@ -257,7 +257,7 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                           Text(
                             'Order',
                             style: TextStyle(
-                              color: darkGrey,
+                              color: Colors.white,
                               fontSize: 24,
                               fontWeight: FontWeight.bold,
                             ),
@@ -285,8 +285,9 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                                       const SizedBox(height: 10),
                                       // No meja
                                       Card(
+                                        color: Color.fromRGBO(30, 30, 30, 1.0),
                                         elevation: 2,
-                                        shadowColor: Colors.grey,
+                                        shadowColor: Color.fromRGBO(20, 20, 20, 1.0),
                                         child: Container(
                                           padding: const EdgeInsets.symmetric(
                                               vertical: 10,
@@ -298,6 +299,7 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                                               const Text(
                                                 'Nomor Meja',
                                                 style: TextStyle(
+                                                  color: Colors.white,
                                                     fontSize: 14,
                                                     fontWeight: FontWeight.bold
                                                 ),
@@ -358,8 +360,9 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                                         children: [
                                           // Sub total
                                           Card(
+                                            color: Color.fromRGBO(30, 30, 30, 1.0),
                                             elevation: 2,
-                                            shadowColor: Colors.grey,
+                                            shadowColor: Color.fromRGBO(20, 20, 20, 1.0),
                                             child: Container(
                                               padding: const EdgeInsets.symmetric(
                                                   vertical: 10,
@@ -371,6 +374,7 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                                                   const Text(
                                                     'Sub Total',
                                                     style: TextStyle(
+                                                      color: Colors.white,
                                                         fontSize: 14,
                                                         fontWeight: FontWeight.bold
                                                     ),
@@ -437,8 +441,9 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                                             children: [
                                               Expanded(
                                                 child: Card(
+                                                  color: Color.fromRGBO(30, 30, 30, 1.0),
                                                   elevation: 2,
-                                                  shadowColor: Colors.grey,
+                                                  shadowColor: Color.fromRGBO(20, 20, 20, 1.0),
                                                   child: Container(
                                                     padding: const EdgeInsets.symmetric(
                                                         vertical: 10,
@@ -450,6 +455,7 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                                                         const Text(
                                                           'Diskon (%)',
                                                           style: TextStyle(
+                                                            color: Colors.white,
                                                               fontSize: 14,
                                                               fontWeight: FontWeight.bold
                                                           ),
@@ -509,8 +515,9 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                                               // Diskon
                                               Expanded(
                                                 child: Card(
+                                                  color: Color.fromRGBO(30, 30, 30, 1.0),
                                                   elevation: 2,
-                                                  shadowColor: Colors.grey,
+                                                  shadowColor: Color.fromRGBO(20, 20, 20, 1.0),
                                                   child: Container(
                                                     padding: const EdgeInsets.symmetric(
                                                         vertical: 10,
@@ -522,6 +529,7 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                                                         const Text(
                                                           'Diskon',
                                                           style: TextStyle(
+                                                          color: Colors.white,
                                                               fontSize: 14,
                                                               fontWeight: FontWeight.bold
                                                           ),
@@ -732,8 +740,9 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                                           const SizedBox(height: 10),
                                           // Total
                                           Card(
+                                            color: Color.fromRGBO(30, 30, 30, 1.0),
                                             elevation: 2,
-                                            shadowColor: Colors.grey,
+                                            shadowColor: Color.fromRGBO(20, 20, 20, 1.0),
                                             child: Container(
                                               padding: const EdgeInsets.symmetric(
                                                   vertical: 10,
@@ -745,6 +754,7 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                                                   const Text(
                                                     'Total',
                                                     style: TextStyle(
+                                                    color: Colors.white,
                                                         fontSize: 14,
                                                         fontWeight: FontWeight.bold
                                                     ),
@@ -1869,7 +1879,7 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
         return StatefulBuilder(
           builder: (context, setState) {
             return AlertDialog(
-              backgroundColor: Colors.white,
+              backgroundColor: const Color.fromRGBO(45, 45, 45, 1.0),
               content: SizedBox(
                 height: 400,
                 width: 450,
@@ -1910,7 +1920,9 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                       ),
                       const SizedBox(height: 20),
                       const Text("Tunai"),
-                      const Divider(),
+                      const Divider(
+                        color: Colors.black26,
+                      ),
                       Row(
                         children: [
                           Expanded(
@@ -1929,25 +1941,13 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                                 decoration: BoxDecoration(
                                   borderRadius:
                                   const BorderRadius.all(Radius.circular(4)),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topRight,
-                                    end: Alignment.bottomLeft,
-                                    colors: indexButton == 1
-                                        ? [
-                                      const Color.fromARGB(255, 253, 0, 0),
-                                      const Color.fromARGB(255, 255, 81, 81),
-                                    ]
-                                        : [
-                                      const Color.fromARGB(255, 255, 89, 0),
-                                      const Color.fromARGB(255, 255, 171, 79),
-                                    ],
-                                  ),
+                                  color: const Color.fromRGBO(30, 30, 30, 1.0),
                                 ),
                                 child: const Center(
                                   child: Text(
                                     "Bayar Pas",
                                     style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.white,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 10,
                                     ),
@@ -1972,25 +1972,13 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                                 decoration: BoxDecoration(
                                   borderRadius:
                                   const BorderRadius.all(Radius.circular(4)),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topRight,
-                                    end: Alignment.bottomLeft,
-                                    colors: indexButton == 2
-                                        ? [
-                                      const Color.fromARGB(255, 253, 0, 0),
-                                      const Color.fromARGB(255, 255, 81, 81),
-                                    ]
-                                        : [
-                                      const Color.fromARGB(255, 255, 89, 0),
-                                      const Color.fromARGB(255, 255, 171, 79),
-                                    ],
-                                  ),
+                                  color: const Color.fromRGBO(30, 30, 30, 1.0),
                                 ),
                                 child: const Center(
                                   child: Text(
                                     "100.000",
                                     style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.white,
                                       fontWeight: FontWeight.bold,
                                       fontSize: 10,
                                     ),
@@ -2015,25 +2003,13 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                                 decoration: BoxDecoration(
                                   borderRadius:
                                   const BorderRadius.all(Radius.circular(4)),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topRight,
-                                    end: Alignment.bottomLeft,
-                                    colors: indexButton == 3
-                                        ? [
-                                      const Color.fromARGB(255, 253, 0, 0),
-                                      const Color.fromARGB(255, 255, 81, 81),
-                                    ]
-                                        : [
-                                      const Color.fromARGB(255, 255, 89, 0),
-                                      const Color.fromARGB(255, 255, 171, 79),
-                                    ],
-                                  ),
+                                  color: const Color.fromRGBO(30, 30, 30, 1.0),
                                 ),
                                 child: const Center(
                                   child: Text(
                                     "50.000",
                                     style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.white,
                                       fontSize: 10,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -2057,25 +2033,13 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                                 height: 30,
                                 decoration: BoxDecoration(
                                   borderRadius: const BorderRadius.all(Radius.circular(4)),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topRight,
-                                    end: Alignment.bottomLeft,
-                                    colors: indexButton == 4
-                                        ? [
-                                      const Color.fromARGB(255, 253, 0, 0),
-                                      const Color.fromARGB(255, 255, 81, 81),
-                                    ]
-                                        : [
-                                      const Color.fromARGB(255, 255, 89, 0),
-                                      const Color.fromARGB(255, 255, 171, 79),
-                                    ],
-                                  ),
+                                  color: const Color.fromRGBO(30, 30, 30, 1.0),
                                 ),
                                 child: const Center(
                                   child: Text(
                                     "20.000",
                                     style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.white,
                                       fontSize: 10,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -2105,25 +2069,13 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                                 decoration: BoxDecoration(
                                   borderRadius:
                                   const BorderRadius.all(Radius.circular(4)),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topRight,
-                                    end: Alignment.bottomLeft,
-                                    colors: indexButton == 5
-                                        ? [
-                                      const Color.fromARGB(255, 253, 0, 0),
-                                      const Color.fromARGB(255, 255, 81, 81),
-                                    ]
-                                        : [
-                                      const Color.fromARGB(255, 255, 89, 0),
-                                      const Color.fromARGB(255, 255, 171, 79),
-                                    ],
-                                  ),
+                                  color: const Color.fromRGBO(30, 30, 30, 1.0),
                                 ),
                                 child: const Center(
                                   child: Text(
                                     "10.000",
                                     style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.white,
                                       fontSize: 10,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -2147,25 +2099,13 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                                 height: 30,
                                 decoration: BoxDecoration(
                                   borderRadius: const BorderRadius.all(Radius.circular(4)),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topRight,
-                                    end: Alignment.bottomLeft,
-                                    colors: indexButton == 6
-                                        ? [
-                                      const Color.fromARGB(255, 253, 0, 0),
-                                      const Color.fromARGB(255, 255, 81, 81),
-                                    ]
-                                        : [
-                                      const Color.fromARGB(255, 255, 89, 0),
-                                      const Color.fromARGB(255, 255, 171, 79),
-                                    ],
-                                  ),
+                                  color: const Color.fromRGBO(30, 30, 30, 1.0),
                                 ),
                                 child: const Center(
                                   child: Text(
                                     "5000",
                                     style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.white,
                                       fontSize: 10,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -2190,25 +2130,13 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                                 decoration: BoxDecoration(
                                   borderRadius:
                                   const BorderRadius.all(Radius.circular(4)),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topRight,
-                                    end: Alignment.bottomLeft,
-                                    colors: indexButton == 7
-                                        ? [
-                                      const Color.fromARGB(255, 253, 0, 0),
-                                      const Color.fromARGB(255, 255, 81, 81),
-                                    ]
-                                        : [
-                                      const Color.fromARGB(255, 255, 89, 0),
-                                      const Color.fromARGB(255, 255, 171, 79),
-                                    ],
-                                  ),
+                                  color: const Color.fromRGBO(30, 30, 30, 1.0),
                                 ),
                                 child: const Center(
                                   child: Text(
                                     "2000",
                                     style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.white,
                                       fontSize: 10,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -2232,25 +2160,13 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                                 height: 30,
                                 decoration: BoxDecoration(
                                   borderRadius: const BorderRadius.all(Radius.circular(4)),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topRight,
-                                    end: Alignment.bottomLeft,
-                                    colors: indexButton == 8
-                                        ? [
-                                      const Color.fromARGB(255, 253, 0, 0),
-                                      const Color.fromARGB(255, 255, 81, 81),
-                                    ]
-                                        : [
-                                      const Color.fromARGB(255, 255, 89, 0),
-                                      const Color.fromARGB(255, 255, 171, 79),
-                                    ],
-                                  ),
+                                  color: const Color.fromRGBO(30, 30, 30, 1.0),
                                 ),
                                 child: const Center(
                                   child: Text(
                                     "Batal",
                                     style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.white,
                                       fontSize: 10,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -2263,7 +2179,9 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                       ),
                       const SizedBox(height: 20),
                       const Text("Non Tunai"),
-                      const Divider(),
+                      const Divider(
+                        color: Colors.black26,
+                      ),
                       Row(
                         children: [
                           Expanded(
@@ -2281,25 +2199,13 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                                 height: 30,
                                 decoration: BoxDecoration(
                                   borderRadius: const BorderRadius.all(Radius.circular(4)),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topRight,
-                                    end: Alignment.bottomLeft,
-                                    colors: paidAmount == 9
-                                        ? [
-                                      const Color.fromARGB(255, 253, 0, 0),
-                                      const Color.fromARGB(255, 255, 81, 81),
-                                    ]
-                                        : [
-                                      const Color.fromARGB(255, 255, 89, 0),
-                                      const Color.fromARGB(255, 255, 171, 79),
-                                    ],
-                                  ),
+                                  color: const Color.fromRGBO(30, 30, 30, 1.0),
                                 ),
                                 child: const Center(
                                   child: Text(
                                     "GoPay",
                                     style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.white,
                                       fontSize: 10,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -2323,25 +2229,13 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                                 height: 30,
                                 decoration: BoxDecoration(
                                   borderRadius: const BorderRadius.all(Radius.circular(4)),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topRight,
-                                    end: Alignment.bottomLeft,
-                                    colors: indexButton == 10
-                                        ? [
-                                      const Color.fromARGB(255, 253, 0, 0),
-                                      const Color.fromARGB(255, 255, 81, 81),
-                                    ]
-                                        : [
-                                      const Color.fromARGB(255, 255, 89, 0),
-                                      const Color.fromARGB(255, 255, 171, 79),
-                                    ],
-                                  ),
+                                  color: const Color.fromRGBO(30, 30, 30, 1.0),
                                 ),
                                 child: const Center(
                                   child: Text(
                                     "OVO",
                                     style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.white,
                                       fontSize: 10,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -2365,25 +2259,13 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                                 height: 30,
                                 decoration: BoxDecoration(
                                   borderRadius: const BorderRadius.all(Radius.circular(4)),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topRight,
-                                    end: Alignment.bottomLeft,
-                                    colors: indexButton == 11
-                                        ? [
-                                      const Color.fromARGB(255, 253, 0, 0),
-                                      const Color.fromARGB(255, 255, 81, 81),
-                                    ]
-                                        : [
-                                      const Color.fromARGB(255, 255, 89, 0),
-                                      const Color.fromARGB(255, 255, 171, 79),
-                                    ],
-                                  ),
+                                  color: const Color.fromRGBO(30, 30, 30, 1.0),
                                 ),
                                 child: const Center(
                                   child: Text(
                                     "ShopeePay",
                                     style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.white,
                                       fontSize: 10,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -2407,25 +2289,13 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                                 height: 30,
                                 decoration: BoxDecoration(
                                   borderRadius: const BorderRadius.all(Radius.circular(4)),
-                                  gradient: LinearGradient(
-                                    begin: Alignment.topRight,
-                                    end: Alignment.bottomLeft,
-                                    colors: indexButton == 12
-                                        ? [
-                                      const Color.fromARGB(255, 253, 0, 0),
-                                      const Color.fromARGB(255, 255, 81, 81),
-                                    ]
-                                        : [
-                                      const Color.fromARGB(255, 255, 89, 0),
-                                      const Color.fromARGB(255, 255, 171, 79),
-                                    ],
-                                  ),
+                                  color: const Color.fromRGBO(30, 30, 30, 1.0),
                                 ),
                                 child: const Center(
                                   child: Text(
                                     "QRis",
                                     style: TextStyle(
-                                      color: Colors.black,
+                                      color: Colors.white,
                                       fontSize: 10,
                                       fontWeight: FontWeight.bold,
                                     ),
@@ -2460,9 +2330,9 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                               ),
                             ),
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.deepOrange,
-                              foregroundColor: Colors.white,
-                              shadowColor: Colors.orangeAccent,
+                              foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+                              backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
+                              shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                               elevation: 3,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10)),
@@ -2488,9 +2358,9 @@ class _SalesDetailSavedPageState extends State<SalesDetailSavedPage> {
                               ),
                             ),
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.deepOrange,
-                              foregroundColor: Colors.white,
-                              shadowColor: Colors.orangeAccent,
+                              foregroundColor: const Color.fromRGBO(163, 163, 163, 1.0),
+                              backgroundColor: const Color.fromRGBO(30, 30, 30, 1.0),
+                              shadowColor: const Color.fromRGBO(20, 20, 20, 1.0),
                               elevation: 3,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10)),

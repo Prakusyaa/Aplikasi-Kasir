@@ -1136,7 +1136,7 @@ class _DashboardPageState extends State<DashboardPage> {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
             side: const BorderSide(
-              color: Color(0xffF68D7F),
+              color: Colors.grey,
               width: 1,
             )
         ),
@@ -1192,7 +1192,7 @@ class _DashboardPageState extends State<DashboardPage> {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
             side: const BorderSide(
-              color: Color(0xffF749A2),
+              color: Colors.grey,
               width: 1,
             )
         ),
@@ -1243,7 +1243,7 @@ class _DashboardPageState extends State<DashboardPage> {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
             side: const BorderSide(
-              color: Color(0xffF68D7F),
+              color: Colors.grey,
               width: 1,
             )
         ),
@@ -1297,7 +1297,7 @@ class _DashboardPageState extends State<DashboardPage> {
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(12),
             side: const BorderSide(
-              color: Color(0xffF749A2),
+              color: Colors.grey,
               width: 1,
             )
         ),
