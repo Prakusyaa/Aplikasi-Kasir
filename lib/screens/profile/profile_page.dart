@@ -136,12 +136,6 @@ class _ProfilePageState extends State<ProfilePage> {
                                   style: const TextStyle(
                                       color: Colors.white, fontSize: 30),
                                 ),
-                                subtitle: const Text(
-                                  "alpinjir@gmail.com",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                  ),
-                                ),
                                 leading: const Icon(
                                   Icons.person,
                                   color: Colors.white,

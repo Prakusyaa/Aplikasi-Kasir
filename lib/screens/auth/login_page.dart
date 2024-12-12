@@ -55,7 +55,7 @@ class _LoginState extends State<LoginPage> {
               child: Padding(
                 padding: EdgeInsets.only(top: 30),
                 child: Text(
-                  "Alpinjir POS",
+                  "Sumadi Shop",
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 40,

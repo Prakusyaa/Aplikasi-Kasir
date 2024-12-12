@@ -231,6 +231,7 @@ class _CapitalMoneyPageState extends State<CapitalMoneyPage> {
                                   const Text(
                                     'Jumlah',
                                     style: TextStyle(
+                                      color: Colors.white,
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold
                                     ),
@@ -426,6 +427,7 @@ class _CapitalMoneyPageState extends State<CapitalMoneyPage> {
                                   const Text(
                                     'Jumlah',
                                     style: TextStyle(
+                                      color: Colors.white,
                                         fontSize: 14,
                                         fontWeight: FontWeight.bold
                                     ),
